@@ -1,20 +1,21 @@
-import profilIcon from 'src/assets/images/account.png';
-import newletterIcon from 'src/assets/images/Newsletter.png';
-import basketIcon from 'src/assets/images/Logo_image_detouré V4 (2).png';
+import profilIcon from 'src/assets/logo/user.svg';
+import newletterIcon from 'src/assets/logo/mail.svg';
+import basketIcon from 'src/assets/logo/shopping-cart.svg';
+import searchIcon from 'src/assets/logo/search.svg';
 
 import './icons.scss';
 
 function Icons() {
   return (
     <div className="icons">
-      <img className="icons-search" src={profilIcon} alt="icone de recherche" />
+      <img className="icons-items" src={searchIcon} alt="icone de recherche" />
       <img
-        className="icons-newLetter"
+        className="icons-items"
         src={newletterIcon}
         alt="icone de newletter"
       />
-      <img className="icons-profil" src={profilIcon} alt="icon de profil" />
-      <img className="icons-basket" src={basketIcon} alt="icon de panier" />
+      <img className="icons-items" src={profilIcon} alt="icon de profil" />
+      <img className="icons-items" src={basketIcon} alt="icon de panier" />
     </div>
   );
 }

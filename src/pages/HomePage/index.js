@@ -1,4 +1,5 @@
-import homeLogo from '../../assets/images/Logo V4 détouré fond couleur nude.png';
+import homeLogo from 'src/assets/images/Logo V4 détouré fond couleur nude.png';
+import homepageData from 'src/data/homepageData';
 
 import './homepage.scss';
 
@@ -16,22 +17,33 @@ function HomePage() {
         />
       </div>
 
-      <div className="homepage__brand">
-        <h2 className="homepage__brand-title">Nos marques</h2>
-        <ul className="homepage__brand__list">
-          <li className="homepage__brand__list-items">veggie deli</li>
-          <li className="homepage__brand__list-items">plantéla</li>
-          <li className="homepage__brand__list-items">wheaty</li>
-          <li className="homepage__brand__list-items">chabiothe</li>
+      <div className="homepage__infos">
+        <h2 className="homepage__infos-title">Nos marques</h2>
+        <ul className="homepage__infos__list">
+          {homepageData.brands.map((brand) => (
+            <li className="homepage__infos__list-items">
+              <img
+                className="homepage__infos__list-items-logo"
+                src={brand.logo}
+                alt={brand.alt}
+              />
+            </li>
+          ))}
         </ul>
       </div>
 
-      <div className="homepage__value">
-        <h2 className="homepage__value-title">Leurs valeurs</h2>
-        <ul className="homepage__value__list">
-          <li className="homepage__value__list-items">toto</li>
-          <li className="homepage__value__list-items">toto</li>
-          <li className="homepage__value__list-items">toto</li>
+      <div className="homepage__infos">
+        <h2 className="homepage__infos-title">Leurs valeurs</h2>
+        <ul className="homepage__infos__list">
+          {homepageData.values.map((value) => (
+            <li className="homepage__infos__list-items">
+              <img
+                className="homepage__infos__list-items-logo"
+                src={value.logo}
+                alt={value.alt}
+              />
+            </li>
+          ))}
         </ul>
       </div>
     </main>

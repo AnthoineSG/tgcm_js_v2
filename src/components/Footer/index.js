@@ -1,4 +1,6 @@
-import reseau from '../../assets/images/3763789-social-media-facebook-instagram-logos-social-media-icons-black-and-white-set-gratuit-vectoriel.jpg';
+import facebookIcon from 'src/assets/logo/facebook.svg';
+import twitterIcon from 'src/assets/logo/twitter.svg';
+import instagramIcon from 'src/assets/logo/instagram.svg';
 
 import './footer.scss';
 
@@ -6,7 +8,21 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__reseau">
-        <img className="footer__reseau-icon" src={reseau} alt="icon reseau" />
+        <img
+          className="footer__reseau-icon"
+          src={facebookIcon}
+          alt="icon reseau"
+        />
+        <img
+          className="footer__reseau-icon"
+          src={twitterIcon}
+          alt="icon reseau"
+        />
+        <img
+          className="footer__reseau-icon"
+          src={instagramIcon}
+          alt="icon reseau"
+        />
       </div>
 
       <div className="footer__adress">

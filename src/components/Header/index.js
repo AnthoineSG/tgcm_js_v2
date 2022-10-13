@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import textLogo from 'src/assets/images/Logo_text_detouré V4.png';
+import burgerIcon from 'src/assets/logo/menu.svg';
 
 import NavBar from './NavBar';
 
@@ -26,7 +27,7 @@ function Header() {
           type="button"
           onClick={handleOpenMenu}
         >
-          x
+          <img src={burgerIcon} alt="menu-burger" />
         </button>
       )}
     </header>

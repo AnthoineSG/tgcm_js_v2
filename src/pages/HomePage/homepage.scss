@@ -6,37 +6,46 @@
 
   &__presentation {
     background-color: vars.$beige;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+    height: 20rem;
 
     &-title {
-
+      border-top: 1px solid black;
+      padding-top: 0.4rem;
+      font-size: 1.3rem;
+      width: 20rem;
     }
     &-logo {
-      height: 10rem;
+      width: 10rem;
     }
   }
 
-  &__brand {
+  &__infos {
+    margin: 1rem 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
 
     &-title {
-
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
     }
     &__list {
-
+      display: flex;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: space-around;
+      width: 90%;
       &-items {
-
-      }
-    }
-  }
-
-  &__value {
-
-    &-title {
-
-    }
-    &__list {
-
-      &-items {
-
+        margin: 0.5rem 1rem;
+        &-logo {
+          height: 3.5rem;
+        }
       }
     }
   }
