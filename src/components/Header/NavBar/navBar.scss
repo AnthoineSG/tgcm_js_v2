@@ -1,0 +1,31 @@
+.navbar {
+  background-color: rgb(153, 153, 221);
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 80%;
+  padding: 1.5rem;
+  padding-top: 5rem;
+  display: flex;
+  flex-flow: column;
+  z-index: 1;
+
+  &-button {
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1rem;
+  }
+
+  &__menu {
+
+    &-categories {
+      font-size: 1.5rem;
+      margin: 1.2rem 0.8rem;
+    }
+  }
+}

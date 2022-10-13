@@ -1,0 +1,17 @@
+.icons {
+  display: flex;
+  justify-content: space-between;
+
+  &-search {
+    height: 3rem;
+  }
+  &-newLetter {
+    height: 3rem;
+  }
+  &-profil {
+    height: 3rem;
+  }
+  &-basket {
+    height: 3rem;
+  }
+}

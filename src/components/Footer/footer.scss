@@ -1,0 +1,43 @@
+@use 'src/styles/vars';
+
+.footer {
+  background-color: vars.$dark-blue;
+  color: white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  min-height: 10rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  &__reseau {
+    margin: 1rem;
+    &-icon {
+      height: 3.5rem;
+    }
+  }
+
+  &__adress {
+    margin: 1rem;
+    border-top: 1px solid white;
+    padding-top: 0.3rem;
+
+    &-name {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__page {
+    margin: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    &-link {
+      margin: 1rem 2rem;
+    }
+  }
+}

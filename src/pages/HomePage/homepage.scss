@@ -1,0 +1,43 @@
+@use 'src/styles/vars';
+
+.homepage {
+  display: flex;
+  flex-flow: column;
+
+  &__presentation {
+    background-color: vars.$beige;
+
+    &-title {
+
+    }
+    &-logo {
+      height: 10rem;
+    }
+  }
+
+  &__brand {
+
+    &-title {
+
+    }
+    &__list {
+
+      &-items {
+
+      }
+    }
+  }
+
+  &__value {
+
+    &-title {
+
+    }
+    &__list {
+
+      &-items {
+
+      }
+    }
+  }
+}
