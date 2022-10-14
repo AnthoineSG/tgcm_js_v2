@@ -1,10 +1,12 @@
 import {
   CHANGE_PATH_CLOSE_BURGER,
   GET_PRODUCT_SUB_CATEGORIES_SUCCESS,
+  GET_PRODUCT_SUCCESS,
 } from '../actions';
 
 const initialState = {
   productList: [],
+  product: {},
   isLoading: false,
 };
 
@@ -20,6 +22,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLoading: false,
+      };
+    case GET_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        product: action.productInfo,
       };
     default:
       return state;

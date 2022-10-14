@@ -12,7 +12,7 @@ import Blog from 'src/pages/Blog';
 import Contact from 'src/pages/Contact';
 import Superdev from 'src/pages/Superdev';
 import SubCategory from 'src/pages/SubCategory';
-// import Product from 'src/pages/Product';
+import Product from 'src/pages/Product';
 import Header from '../Header';
 import Footer from '../Footer';
 
@@ -37,7 +37,7 @@ function App() {
         {/* DYNAMIQUE */}
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:subcategory" element={<SubCategory />} />
-        {/* <Route path="/product/:category" element={<Product />} /> */}
+        <Route path="/product/:id" element={<Product />} />
 
         {/* STATIC */}
         <Route path="/cgv" element={<Cgv />} />
