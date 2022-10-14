@@ -1,0 +1,115 @@
+@use 'src/styles/vars';
+
+.product {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  &-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+    &-mode {
+      color: vars.$mode;
+      border-top: 2px solid vars.$mode;
+    }
+    &-beaute {
+      color: vars.$beaute;
+      border-top: 2px solid vars.$beaute;
+    }
+    &-alimentation {
+      color: vars.$alimentation;
+      border-top: 2px solid vars.$alimentation;
+    }
+    &-services {
+      color: vars.$services;
+      border-top: 2px solid vars.$services;
+    }
+    &-loisirs {
+      color: vars.$loisirs;
+      border-top: 2px solid vars.$loisirs;
+    }
+    &-maison {
+      color: vars.$maison;      
+      border-top: 2px solid vars.$maison;
+    }
+  }
+
+  &-img {
+    height: 30rem;
+  }
+
+  &__infos {
+    width: 90%;
+    margin-top: 1.5rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    &-brand {
+      font-size: 1.8rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1rem;
+      &-mode {
+        color: vars.$mode;
+        border-top: 2px solid vars.$mode;
+      }
+      &-beaute {
+        color: vars.$beaute;
+        border-top: 2px solid vars.$beaute;
+      }
+      &-alimentation {
+        color: vars.$alimentation;
+        border-top: 2px solid vars.$alimentation;
+      }
+      &-services {
+        color: vars.$services;
+        border-top: 2px solid vars.$services;
+      }
+      &-loisirs {
+        color: vars.$loisirs;
+        border-top: 2px solid vars.$loisirs;
+      }
+      &-maison {
+        color: vars.$maison;      
+        border-top: 2px solid vars.$maison;
+      }
+    }
+    &-name {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    &-content {
+      margin-bottom: 1rem;
+      &-span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-button {
+    border: none;
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    &-mode {
+      background-color: vars.$mode;
+    }
+    &-beaute {
+    background-color: vars.$beaute;
+    }
+    &-alimentation {
+    background-color: vars.$alimentation;
+    }
+    &-services {
+    background-color: vars.$services;
+    }
+    &-loisirs {
+    background-color: vars.$loisirs;
+    }
+    &-maison {
+    background-color: vars.$maison;
+    }
+  }
+}
