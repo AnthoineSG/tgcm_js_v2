@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import facebookIcon from 'src/assets/logo/facebook.svg';
 import twitterIcon from 'src/assets/logo/twitter.svg';
 import instagramIcon from 'src/assets/logo/instagram.svg';
@@ -30,12 +32,22 @@ function Footer() {
         <p className="footer__adress-name">12, place lena 75001 PARIS</p>
       </div>
 
-      <nav className="footer__page">
-        <p className="footer__page-link">CGV</p>
-        <p className="footer__page-link">FAQ</p>
-        <p className="footer__page-link">BLOG</p>
-        <p className="footer__page-link">Nous contacter</p>
-        <p className="footer__page-link">Super Dev</p>
+      <nav className="footer__pages">
+        <Link to="/cgv" className="footer__pages-link">
+          CGV
+        </Link>
+        <Link to="/faq" className="footer__pages-link">
+          FAQ
+        </Link>
+        <Link to="/blog" className="footer__pages-link">
+          BLOG
+        </Link>
+        <Link to="/contact" className="footer__pages-link">
+          Nous contacter
+        </Link>
+        <Link to="/superdev" className="footer__pages-link">
+          Super Dev
+        </Link>
       </nav>
     </footer>
   );
