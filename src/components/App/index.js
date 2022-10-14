@@ -8,17 +8,21 @@ import {
   getBrand,
 } from 'src/store/actions';
 
-import HomePage from 'src/components/pages/HomePage';
-import NotFound from 'src/components/pages/NotFound';
-import Cgv from 'src/components/pages/Cgv';
-import Faq from 'src/components/pages/Faq';
-import Blog from 'src/components/pages/Blog';
-import Contact from 'src/components/pages/Contact';
-import Superdev from 'src/components/pages/Superdev';
-import SubCategory from 'src/components/pages/SubCategory';
-import Product from 'src/components/pages/Product';
+// ? COMPONENTS
 import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
+// ? DYNAMIQUE
+import HomePage from 'src/components/pages/HomePage';
+import NotFound from 'src/components/pages/static/NotFound';
+import SubCategory from 'src/components/pages/SubCategory';
+import Product from 'src/components/pages/Product';
+import Profil from 'src/components/pages/Profil';
+// ? STATIC
+import Cgv from 'src/components/pages/static/Cgv';
+import Faq from 'src/components/pages/static/Faq';
+import Blog from 'src/components/pages/static/Blog';
+import Contact from 'src/components/pages/static/Contact';
+import Superdev from 'src/components/pages/static/Superdev';
 
 import './app.scss';
 
@@ -43,6 +47,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:subcategory" element={<SubCategory />} />
         <Route path="/product/:id" element={<Product />} />
+        <Route path="/account" element={<Profil />} />
 
         {/* STATIC */}
         <Route path="/cgv" element={<Cgv />} />

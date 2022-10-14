@@ -23,7 +23,7 @@ function Product() {
   }, [params.id]);
 
   return (
-    <div className="product">
+    <main className="product">
       {isLoading || (
         <>
           <Title prodCat={product.category_name} />
@@ -59,7 +59,7 @@ function Product() {
           <Button prodCat={product.category_name} />
         </>
       )}
-    </div>
+    </main>
   );
 }
 

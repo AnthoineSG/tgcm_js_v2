@@ -1,8 +1,8 @@
 function Cgv() {
   return (
-    <div>
+    <main>
       <h1>Cgv</h1>
-    </div>
+    </main>
   );
 }
 

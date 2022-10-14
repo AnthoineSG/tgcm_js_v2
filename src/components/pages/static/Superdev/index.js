@@ -1,8 +1,8 @@
 function Superdev() {
   return (
-    <div>
+    <main>
       <h1>Superdev</h1>
-    </div>
+    </main>
   );
 }
 

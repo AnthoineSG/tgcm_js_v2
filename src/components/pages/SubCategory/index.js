@@ -17,7 +17,7 @@ function SubCategory() {
   }, [params.subcategory]);
 
   return (
-    <div className="subcategory">
+    <main className="subcategory">
       <h1 className="subcategory-title">{params.subcategory}</h1>
 
       {isLoading &&
@@ -41,7 +41,7 @@ function SubCategory() {
             </Link>
           </div>
         ))}
-    </div>
+    </main>
   );
 }
 

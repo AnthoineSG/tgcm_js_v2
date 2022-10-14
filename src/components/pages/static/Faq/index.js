@@ -1,8 +1,8 @@
 function Faq() {
   return (
-    <div>
+    <main>
       <h1>Faq</h1>
-    </div>
+    </main>
   );
 }
 
