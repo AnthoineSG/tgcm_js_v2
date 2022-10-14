@@ -1,5 +1,6 @@
 const initalState = {
   categoriesList: [],
+  categorieSelected: '',
 };
 
 const reducer = (state = initalState, action = {}) => {
@@ -8,6 +9,11 @@ const reducer = (state = initalState, action = {}) => {
       return {
         ...state,
         categoriesList: action.categoriesData,
+      };
+    case 'CHOOSE_CATEGORIE':
+      return {
+        ...state,
+        categorieSelected: action.selected,
       };
     default:
       return state;
