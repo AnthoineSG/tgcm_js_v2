@@ -6,7 +6,6 @@
   padding: 0 1rem;
   position: relative;
 
-
   &-logo{
     height: 4rem;
   }
@@ -17,5 +16,17 @@
     width: 2rem;
     height: 2rem;
     font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .header {
+
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+
   }
 }

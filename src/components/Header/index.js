@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import textLogo from 'src/assets/images/Logo_text_detouré V4.png';
 import burgerIcon from 'src/assets/logo/menu.svg';
@@ -17,7 +18,9 @@ function Header() {
 
   return (
     <header className="header">
-      <img className="header-logo" src={textLogo} alt="logo format text" />
+      <Link to="/">
+        <img className="header-logo" src={textLogo} alt="logo format text" />
+      </Link>
 
       {burgerIsActive ? (
         <NavBar />

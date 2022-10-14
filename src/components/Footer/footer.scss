@@ -47,3 +47,52 @@
   }
 }
 
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .footer {
+    justify-content: space-around;
+  
+    &__reseau {
+  
+      &-icon {
+
+      }
+    }
+  
+    &__adress {
+  
+      &-name {
+      }
+    }
+  
+    &__page {
+  
+      &-link {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    justify-content: space-evenly;
+    padding: 0;
+    &__reseau {
+  
+      &-icon {
+
+      }
+    }
+  
+    &__adress {
+  
+      &-name {
+      }
+    }
+  
+    &__page {
+  
+      &-link {
+      }
+    }
+  }
+}

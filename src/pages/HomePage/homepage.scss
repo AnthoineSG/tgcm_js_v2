@@ -41,12 +41,28 @@
       align-items: center;
       justify-content: space-around;
       width: 90%;
-      &-items {
+      &__items {
         margin: 0.5rem 1rem;
-        &-logo {
-          height: 3.5rem;
+        &-brand {
+          height: 3.6rem;
+        }
+        &-value {
+          height: 5rem;
         }
       }
     }
   }
 }
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .homepage {
+
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .homepage {
+
+  }
+}
+

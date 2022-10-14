@@ -21,9 +21,9 @@ function HomePage() {
         <h2 className="homepage__infos-title">Nos marques</h2>
         <ul className="homepage__infos__list">
           {homepageData.brands.map((brand) => (
-            <li className="homepage__infos__list-items">
+            <li className="homepage__infos__list__items" key={brand.id}>
               <img
-                className="homepage__infos__list-items-logo"
+                className="homepage__infos__list__items-brand"
                 src={brand.logo}
                 alt={brand.alt}
               />
@@ -36,9 +36,9 @@ function HomePage() {
         <h2 className="homepage__infos-title">Leurs valeurs</h2>
         <ul className="homepage__infos__list">
           {homepageData.values.map((value) => (
-            <li className="homepage__infos__list-items">
+            <li className="homepage__infos__list__items" key={value.id}>
               <img
-                className="homepage__infos__list-items-logo"
+                className="homepage__infos__list__items-value"
                 src={value.logo}
                 alt={value.alt}
               />

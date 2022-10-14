@@ -1,3 +1,18 @@
 .app {
   margin: 0 auto;
 }
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .app {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .app {
+
+  }
+}
