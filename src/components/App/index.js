@@ -16,7 +16,9 @@ import HomePage from 'src/components/pages/HomePage';
 import NotFound from 'src/components/pages/static/NotFound';
 import SubCategory from 'src/components/pages/SubCategory';
 import Product from 'src/components/pages/Product';
-import Profil from 'src/components/pages/Profil';
+import Profil from 'src/components/pages/Account/Profil';
+import Signup from 'src/components/pages/Account/Signup';
+import Signin from 'src/components/pages/Account/Signin';
 // ? STATIC
 import Cgv from 'src/components/pages/static/Cgv';
 import Faq from 'src/components/pages/static/Faq';
@@ -48,6 +50,8 @@ function App() {
         <Route path="/category/:subcategory" element={<SubCategory />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/account" element={<Profil />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
 
         {/* STATIC */}
         <Route path="/cgv" element={<Cgv />} />

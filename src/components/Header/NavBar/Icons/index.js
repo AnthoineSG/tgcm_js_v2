@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import profilIcon from 'src/assets/logo/user.svg';
 import newletterIcon from 'src/assets/logo/mail.svg';
 import basketIcon from 'src/assets/logo/shopping-cart.svg';
@@ -14,7 +16,9 @@ function Icons() {
         src={newletterIcon}
         alt="icone de newletter"
       />
-      <img className="icons-items" src={profilIcon} alt="icon de profil" />
+      <Link to="/account">
+        <img className="icons-items" src={profilIcon} alt="icon de profil" />
+      </Link>
       <img className="icons-items" src={basketIcon} alt="icon de panier" />
     </div>
   );
