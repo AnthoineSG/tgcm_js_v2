@@ -15,6 +15,11 @@ const reducer = (state = initalState, action = {}) => {
         ...state,
         categorieSelected: action.selected,
       };
+    case 'CHANGE_PATH_CLOSE_NAVBAR':
+      return {
+        ...state,
+        categorieSelected: '',
+      };
     default:
       return state;
   }

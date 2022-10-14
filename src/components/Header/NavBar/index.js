@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import Icons from './Icons';
 
 import './navBar.scss';
@@ -26,26 +28,27 @@ function NavBar() {
 
       <Icons />
 
-      <nav className="navbar__menu">
-        {categories.map((categorie) => (
-          <>
-            <button
-              className="navbar__menu-categories"
-              type="button"
-              key={categorie.category}
-              onClick={() => handleCategorieClick(categorie.category)}
-            >
-              {categorie.category}
-            </button>
-            {categorieSelected === categorie.category &&
-              categorie.sub_category.map((sub) => (
-                <p className="navbar__menu-subcategories" key={sub}>
-                  {sub}
-                </p>
-              ))}
-          </>
-        ))}
-      </nav>
+      {categories.map((categorie) => (
+        <div key={categorie.category} className="navbar__menu">
+          <button
+            className="navbar__menu-categories"
+            type="button"
+            onClick={() => handleCategorieClick(categorie.category)}
+          >
+            {categorie.category}
+          </button>
+          {categorieSelected === categorie.category &&
+            categorie.sub_category.map((sub) => (
+              <Link
+                className="navbar__menu-subcategories"
+                to={`/category/${sub}`}
+                key={sub}
+              >
+                {sub}
+              </Link>
+            ))}
+        </div>
+      ))}
     </div>
   );
 }

@@ -14,6 +14,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         burgerIsActive: false,
       };
+    case 'CHANGE_PATH_CLOSE_NAVBAR':
+      return {
+        ...state,
+        burgerIsActive: false,
+      };
     default:
       return state;
   }
