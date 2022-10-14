@@ -4,6 +4,7 @@ import {
   GET_CATEGORIES,
   getCategoriesSuccess,
   getProductSubCategoriesSuccess,
+  GET_PRODUCT_SUB_CATEGORIES,
 } from '../actions';
 
 const categoriesMiddleware = (store) => (next) => (action) => {
@@ -24,7 +25,7 @@ const categoriesMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case 'GET_PRODUCT_SUB_CATEGORIES': {
+    case GET_PRODUCT_SUB_CATEGORIES: {
       const config = {
         method: 'GET',
         url: `http://localhost:8080/api/product/sub_category/${action.subCategory}`,

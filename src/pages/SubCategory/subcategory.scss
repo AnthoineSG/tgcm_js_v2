@@ -1,0 +1,49 @@
+.subcategory {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &-title {
+    font-size: 3rem;
+    margin: 1rem 0;
+    border-top: 2px solid black;
+    padding-top: 0.2rem;
+  }
+
+  &__card {
+    margin: 1rem 0;
+    padding: 0.5rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    &-img {
+      height: 25rem;
+    }
+
+    &__infos {
+      display: flex;
+      flex-flow: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 0.5rem;
+      font-weight: bold;
+      margin-left: 0.2rem;
+      &-brand {
+        border-top: 1px solid black;
+        padding-top: 0.3rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+      &-name {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+      &-price {
+        
+      }
+    }
+  }
+}
