@@ -4,17 +4,17 @@ import { useDispatch } from 'react-redux';
 
 import { changePathCloseNavbar, getCategories } from 'src/store/actions';
 
-import HomePage from 'src/pages/HomePage';
-import NotFound from 'src/pages/NotFound';
-import Cgv from 'src/pages/Cgv';
-import Faq from 'src/pages/Faq';
-import Blog from 'src/pages/Blog';
-import Contact from 'src/pages/Contact';
-import Superdev from 'src/pages/Superdev';
-import SubCategory from 'src/pages/SubCategory';
-import Product from 'src/pages/Product';
-import Header from '../Header';
-import Footer from '../Footer';
+import HomePage from 'src/components/pages/HomePage';
+import NotFound from 'src/components/pages/NotFound';
+import Cgv from 'src/components/pages/Cgv';
+import Faq from 'src/components/pages/Faq';
+import Blog from 'src/components/pages/Blog';
+import Contact from 'src/components/pages/Contact';
+import Superdev from 'src/components/pages/Superdev';
+import SubCategory from 'src/components/pages/SubCategory';
+import Product from 'src/components/pages/Product';
+import Header from 'src/components/Header';
+import Footer from 'src/components/Footer';
 
 import './app.scss';
 

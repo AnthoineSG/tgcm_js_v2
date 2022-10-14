@@ -1,4 +1,4 @@
-import errorGif from '../../assets/images/Session-Jump-Scare.gif';
+import errorGif from 'src/assets/images/Session-Jump-Scare.gif';
 
 import './notfound.scss';
 

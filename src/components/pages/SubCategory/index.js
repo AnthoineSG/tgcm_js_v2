@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 
-import { getProductSubCategories } from '../../store/actions';
+import { getProductSubCategories } from '../../../store/actions';
 
 import './subcategory.scss';
 

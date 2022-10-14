@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-import { getProduct } from '../../store/actions';
+import { getProduct } from '../../../store/actions';
 
 import Title from './Components/Title';
 import Button from './Components/Button';
