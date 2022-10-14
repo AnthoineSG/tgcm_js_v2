@@ -2,7 +2,11 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { changePathCloseNavbar, getCategories } from 'src/store/actions';
+import {
+  changePathCloseNavbar,
+  getCategories,
+  getBrand,
+} from 'src/store/actions';
 
 import HomePage from 'src/components/pages/HomePage';
 import NotFound from 'src/components/pages/NotFound';
@@ -28,6 +32,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getCategories());
+    dispatch(getBrand());
   }, []);
 
   return (

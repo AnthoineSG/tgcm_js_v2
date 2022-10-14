@@ -1,9 +1,13 @@
+import { useSelector } from 'react-redux';
 import homeLogo from 'src/assets/images/Logo V4 détouré fond couleur nude.png';
 import homepageData from 'src/data/homepageData';
 
 import './homepage.scss';
 
 function HomePage() {
+  const brands = useSelector((state) => state.brands.brandList);
+  const isLoading = useSelector((state) => state.brands.isLoading);
+
   return (
     <main className="homepage">
       <div className="homepage__presentation">
@@ -20,15 +24,16 @@ function HomePage() {
       <div className="homepage__infos">
         <h2 className="homepage__infos-title">Nos marques</h2>
         <ul className="homepage__infos__list">
-          {homepageData.brands.map((brand) => (
-            <li className="homepage__infos__list__items" key={brand.id}>
-              <img
-                className="homepage__infos__list__items-brand"
-                src={brand.logo}
-                alt={brand.alt}
-              />
-            </li>
-          ))}
+          {isLoading ||
+            brands.map((brand) => (
+              <li className="homepage__infos__list__items" key={brand.id}>
+                <img
+                  className="homepage__infos__list__items-brand"
+                  src={brand.logo}
+                  alt={brand.alt}
+                />
+              </li>
+            ))}
         </ul>
       </div>
 
