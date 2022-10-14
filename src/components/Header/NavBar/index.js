@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { chooseCategorie, closeBurger } from '../../../store/actions';
 
 import Icons from './Icons';
 
@@ -13,11 +14,11 @@ function NavBar() {
   );
 
   const handleCloseMenu = () => {
-    dispatch({ type: 'CLOSE_BURGER' });
+    dispatch(closeBurger());
   };
 
   const handleCategorieClick = (categorie) => {
-    dispatch({ type: 'CHOOSE_CATEGORIE', selected: categorie });
+    dispatch(chooseCategorie(categorie));
   };
 
   return (

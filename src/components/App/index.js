@@ -2,16 +2,18 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import HomePage from '../../pages/HomePage';
-import Footer from '../Footer';
+import { changePathCloseNavbar, getCategories } from 'src/store/actions';
+
+import HomePage from 'src/pages/HomePage';
+import NotFound from 'src/pages/NotFound';
+import Cgv from 'src/pages/Cgv';
+import Faq from 'src/pages/Faq';
+import Blog from 'src/pages/Blog';
+import Contact from 'src/pages/Contact';
+import Superdev from 'src/pages/Superdev';
+import SubCategory from 'src/pages/SubCategory';
 import Header from '../Header';
-import NotFound from '../../pages/NotFound';
-import Cgv from '../../pages/Cgv';
-import Faq from '../../pages/Faq';
-import Blog from '../../pages/Blog';
-import Contact from '../../pages/Contact';
-import Superdev from '../../pages/Superdev';
-import SubCategory from '../../pages/SubCategory';
+import Footer from '../Footer';
 
 import './app.scss';
 
@@ -20,11 +22,11 @@ function App() {
   const locate = useLocation();
 
   useEffect(() => {
-    dispatch({ type: 'CHANGE_PATH_CLOSE_NAVBAR' });
+    dispatch(changePathCloseNavbar());
   }, [locate.pathname]);
 
   useEffect(() => {
-    dispatch({ type: 'GET_CATEGORIES' });
+    dispatch(getCategories());
   }, []);
 
   return (

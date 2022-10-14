@@ -7,13 +7,14 @@ import burgerIcon from 'src/assets/logo/menu.svg';
 import NavBar from './NavBar';
 
 import './header.scss';
+import { openBurger } from '../../store/actions';
 
 function Header() {
   const dispatch = useDispatch();
   const burgerIsActive = useSelector((state) => state.burger.burgerIsActive);
 
   const handleOpenMenu = () => {
-    dispatch({ type: 'OPEN_BURGER' });
+    dispatch(openBurger());
   };
 
   return (
