@@ -1,21 +1,45 @@
-function signup() {
+import './signup.scss';
+
+function Signup() {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     console.log('submit');
   };
 
   return (
-    <div>
-      <h1>S'inscrire</h1>
-      <form onSubmit={handleSubmitForm}>
-        <input placeholder="Firstname" required type="text" />
-        <input placeholder="Lastname" required type="text" />
-        <input placeholder="Email" required type="email" />
-        <input placeholder="Password" required type="password" />
-        <button type="submit">Valider</button>
+    <main className="signup">
+      <h1 className="signup-title">Création de compte</h1>
+      <form className="signup__form" onSubmit={handleSubmitForm}>
+        <input
+          className="signup__form-items"
+          placeholder="Firstname"
+          required
+          type="text"
+        />
+        <input
+          className="signup__form-items"
+          placeholder="Lastname"
+          required
+          type="text"
+        />
+        <input
+          className="signup__form-items"
+          placeholder="Email"
+          required
+          type="email"
+        />
+        <input
+          className="signup__form-items"
+          placeholder="Password"
+          required
+          type="password"
+        />
+        <button className="signup__form-button" type="submit">
+          Créer un compte
+        </button>
       </form>
-    </div>
+    </main>
   );
 }
 
-export default signup;
+export default Signup;

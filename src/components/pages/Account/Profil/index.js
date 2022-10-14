@@ -8,7 +8,7 @@ function Profil() {
 
   useEffect(() => {
     if (userLog === false) {
-      navigate('/signup');
+      navigate('/signin');
     }
   }, []);
 

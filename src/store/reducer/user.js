@@ -1,5 +1,10 @@
 const initialState = {
-  user: {},
+  user: {
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+  },
   isLogged: false,
 };
 

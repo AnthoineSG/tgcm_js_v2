@@ -1,0 +1,40 @@
+.signin {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  &-title {
+    font-size: 2.5rem;
+    border-top: 1px solid black;
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: column;
+    width: 80%;
+    &-items {
+      font-size: 1.8rem;
+    }
+    &-button {
+      font-size: 1.8rem;
+    }
+  }
+
+  &-reinitialise {
+    font-size: 1.3rem;
+  }
+
+  &__signup {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    &-title {
+      font-size: 1.3rem;
+
+    }
+    &-button {
+      font-size: 1.8rem;
+    }
+  }
+}
