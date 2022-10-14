@@ -19,14 +19,22 @@
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    background-color: white;
   }
 
   &__menu {
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
 
     &-categories {
+      border: none;
+      background-color: white;
       font-size: 1.5rem;
-      margin: 1.2rem 0.8rem;
+      margin: 0.5rem 0;
+      padding: 0;
     }
   }
 }

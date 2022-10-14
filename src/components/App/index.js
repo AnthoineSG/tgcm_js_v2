@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import HomePage from '../../pages/HomePage';
 import Footer from '../Footer';
@@ -13,6 +15,12 @@ import Superdev from '../../pages/Superdev';
 import './app.scss';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: 'GET_CATEGORIES' });
+  }, []);
+
   return (
     <div className="app">
       <Header />

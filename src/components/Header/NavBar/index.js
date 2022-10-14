@@ -1,10 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Icons from './Icons';
 
 import './navBar.scss';
 
 function NavBar() {
   const dispatch = useDispatch();
+  const categories = useSelector((state) => state.categories.categoriesList);
 
   const handleCloseMenu = () => {
     dispatch({ type: 'CLOSE_BURGER' });
@@ -19,11 +20,15 @@ function NavBar() {
       <Icons />
 
       <nav className="navbar__menu">
-        <p className="navbar__menu-categories">Food</p>
-        <p className="navbar__menu-categories">Mode</p>
-        <p className="navbar__menu-categories">Beaute</p>
-        <p className="navbar__menu-categories">Loisir</p>
-        <p className="navbar__menu-categories">Services</p>
+        {categories.map((categorie) => (
+          <button
+            className="navbar__menu-categories"
+            type="button"
+            key={categorie.category}
+          >
+            {categorie.category}
+          </button>
+        ))}
       </nav>
     </div>
   );
