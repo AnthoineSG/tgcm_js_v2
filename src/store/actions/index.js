@@ -33,3 +33,18 @@ export const closeBurger = () => ({
 export const changePathCloseNavbar = () => ({
   type: CHANGE_PATH_CLOSE_BURGER,
 });
+
+// ! PRODUCT
+export const GET_PRODUCT_SUB_CATEGORIES = 'GET_PRODUCT_SUB_CATEGORIES';
+export const GET_PRODUCT_SUB_CATEGORIES_SUCCESS =
+  'GET_PRODUCT_SUB_CATEGORIES_SUCCESS';
+
+export const getProductSubCategories = (subCategory) => ({
+  type: GET_PRODUCT_SUB_CATEGORIES,
+  subCategory,
+});
+
+export const getProductSubCategoriesSuccess = (productList) => ({
+  type: GET_PRODUCT_SUB_CATEGORIES_SUCCESS,
+  productList,
+});
