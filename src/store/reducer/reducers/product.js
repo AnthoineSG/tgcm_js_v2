@@ -3,7 +3,7 @@ import {
   GET_PRODUCT,
   GET_PRODUCT_SUB_CATEGORIES_SUCCESS,
   GET_PRODUCT_SUCCESS,
-} from '../actions';
+} from '../../actions';
 
 const initialState = {
   productList: [],

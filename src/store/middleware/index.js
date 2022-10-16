@@ -1,9 +1,9 @@
 import { applyMiddleware, compose } from 'redux';
 
-import brandMiddleware from './brand';
-import categoriesMiddleware from './categories';
-import productMiddleware from './product';
-import userMiddleware from './user';
+import brandMiddleware from './middlewares/brand';
+import categoriesMiddleware from './middlewares/categories';
+import productMiddleware from './middlewares/product';
+import userMiddleware from './middlewares/user';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_BRAND, getBrandSuccess } from '../actions';
+import { GET_BRAND, getBrandSuccess } from '../../actions';
 
 const brandMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

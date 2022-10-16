@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 
-import burgerReducer from './burger';
-import brandReducer from './brand';
-import categoriesReducer from './categories';
-import productReducer from './product';
-import userReducer from './user';
+import burgerReducer from './reducers/burger';
+import brandReducer from './reducers/brand';
+import categoriesReducer from './reducers/categories';
+import productReducer from './reducers/product';
+import userReducer from './reducers/user';
 
 const rootReducer = combineReducers({
   burger: burgerReducer,

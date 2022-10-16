@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { getProductSuccess, GET_PRODUCT } from '../actions';
+import { getProductSuccess, GET_PRODUCT } from '../../actions';
 
 const productMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

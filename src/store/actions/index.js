@@ -77,3 +77,31 @@ export const getBrandSuccess = (brands) => ({
   type: GET_BRAND_SUCCESS,
   brands,
 });
+
+// ! USER
+export const CHANGE_INPUT_VALUE = 'CHANGE_INPUT_VALUE';
+export const SUBMIT_NEW_USER = 'SUBMIT_NEW_USER';
+export const SUBMIT_NEW_USER_SUCCESS = 'SUBMIT_NEW_USER_SUCCESS';
+export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS';
+
+export const changeInputValue = (inputName, inputValue) => ({
+  type: CHANGE_INPUT_VALUE,
+  inputName,
+  inputValue,
+});
+
+export const submitNewUserSuccess = () => ({
+  type: SUBMIT_NEW_USER_SUCCESS,
+});
+
+export const submitNewUser = (firstname, lastname, email, password) => ({
+  type: SUBMIT_NEW_USER,
+  firstname,
+  lastname,
+  email,
+  password,
+});
+
+export const createNewAccountSuccess = () => ({
+  type: CREATE_ACCOUNT_SUCCESS,
+});

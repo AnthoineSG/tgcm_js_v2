@@ -1,4 +1,4 @@
-import { GET_BRAND, GET_BRAND_SUCCESS } from '../actions';
+import { GET_BRAND, GET_BRAND_SUCCESS } from '../../actions';
 
 const initalState = {
   brandList: [],
