@@ -1,3 +1,5 @@
+@use 'src/styles/vars';
+
 .subcategory {
   display: flex;
   flex-flow: column;
@@ -5,7 +7,7 @@
   align-items: center;
 
   &-title {
-    font-size: 3rem;
+    font-size: vars.$title;
     margin: 1rem 0;
     border-top: 2px solid black;
     padding-top: 0.2rem;
