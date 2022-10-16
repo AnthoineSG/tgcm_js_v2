@@ -1,6 +1,11 @@
 import axios from 'axios';
 
-import { submitNewUserSuccess, SUBMIT_NEW_USER } from '../../actions';
+import {
+  submitLoginSuccess,
+  submitNewUserSuccess,
+  SUBMIT_LOGIN,
+  SUBMIT_NEW_USER,
+} from '../../actions';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -29,6 +34,30 @@ const userMiddleware = (store) => (next) => (action) => {
       next(action);
       break;
     }
+
+    case SUBMIT_LOGIN: {
+      const config = {
+        method: 'POST',
+        url: 'http://localhost:8080/api/user/login',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          email: action.email,
+          password: action.password,
+        },
+      };
+      axios(config)
+        .then((res) => {
+          store.dispatch(submitLoginSuccess(res.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
+
     default:
       next(action);
   }

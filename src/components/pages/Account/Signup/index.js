@@ -2,22 +2,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import {
-  changeInputValue,
+  changeInputSignupValue,
   createNewAccountSuccess,
   submitNewUser,
-} from '../../../../store/actions';
+} from 'src/store/actions';
 
 import './signup.scss';
 
 function Signup() {
   const nevigate = useNavigate();
   const dispatch = useDispatch();
-  const { firstname, lastname, email, password } = useSelector(
-    (state) => state.users.user
-  );
-  const createAccountSuccess = useSelector(
-    (state) => state.users.createAccountSuccess
-  );
+  const { firstname, lastname, email, password, createAccountSuccess } =
+    useSelector((state) => state.users.userCreation);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -25,7 +21,7 @@ function Signup() {
   };
 
   const handleInputChange = (e) => {
-    dispatch(changeInputValue(e.target.name, e.target.value));
+    dispatch(changeInputSignupValue(e.target.name, e.target.value));
   };
 
   const handleRedirectAfterCreateAccount = () => {
