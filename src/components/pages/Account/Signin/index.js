@@ -1,7 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 
-import { changeInputSigninValue, submitLogin } from 'src/store/actions';
+import {
+  changeInputSigninValue,
+  submitLogin,
+  closeModalSignin,
+} from 'src/store/actions';
 
 import './signin.scss';
 
@@ -25,7 +29,7 @@ function Signin() {
   };
 
   const handleClickModal = () => {
-    dispatch({ type: 'CLOSE_MODAL_SIGNIN' });
+    dispatch(closeModalSignin());
   };
 
   return (

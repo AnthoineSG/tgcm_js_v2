@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import { openBurger } from 'src/store/actions';
+
 import textLogo from 'src/assets/images/Logo_text_detouré V4.png';
 import burgerIcon from 'src/assets/logo/menu.svg';
 
 import NavBar from './NavBar';
 
 import './header.scss';
-import { openBurger } from '../../store/actions';
 
 function Header() {
   const dispatch = useDispatch();

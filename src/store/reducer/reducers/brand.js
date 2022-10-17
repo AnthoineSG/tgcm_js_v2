@@ -12,12 +12,14 @@ const reducer = (state = initalState, action = {}) => {
         ...state,
         isLoading: true,
       };
+
     case GET_BRAND_SUCCESS:
       return {
         ...state,
         brandList: action.brands,
         isLoading: false,
       };
+
     default:
       return state;
   }

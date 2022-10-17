@@ -19,22 +19,26 @@ const reducer = (state = initialState, action = {}) => {
         productList: action.productList,
         isLoading: true,
       };
+
     case CHANGE_PATH_CLOSE_BURGER:
       return {
         ...state,
         isLoading: false,
       };
+
     case GET_PRODUCT:
       return {
         ...state,
         isLoading: true,
       };
+
     case GET_PRODUCT_SUCCESS:
       return {
         ...state,
         product: action.productInfo,
         isLoading: false,
       };
+
     default:
       return state;
   }

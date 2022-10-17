@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { chooseCategorie, closeBurger } from '../../../store/actions';
+
+import { chooseCategorie, closeBurger } from 'src/store/actions';
 
 import Icons from './Icons';
 

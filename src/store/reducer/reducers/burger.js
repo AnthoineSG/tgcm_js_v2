@@ -15,16 +15,19 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         burgerIsActive: true,
       };
+
     case CLOSE_BURGER:
       return {
         ...state,
         burgerIsActive: false,
       };
+
     case CHANGE_PATH_CLOSE_BURGER:
       return {
         ...state,
         burgerIsActive: false,
       };
+
     default:
       return state;
   }

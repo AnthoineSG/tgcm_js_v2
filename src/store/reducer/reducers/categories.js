@@ -16,16 +16,19 @@ const reducer = (state = initalState, action = {}) => {
         ...state,
         categoriesList: action.categoriesData,
       };
+
     case CHOOSE_CATEGORIE:
       return {
         ...state,
         categorieSelected: action.selected,
       };
+
     case CHANGE_PATH_CLOSE_BURGER:
       return {
         ...state,
         categorieSelected: '',
       };
+
     default:
       return state;
   }

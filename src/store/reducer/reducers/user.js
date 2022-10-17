@@ -1,6 +1,7 @@
 import {
   CHANGE_INPUT_SIGNIN_VALUE,
   CHANGE_INPUT_SIGNUP_VALUE,
+  CLOSE_MODAL_SIGNIN,
   CREATE_ACCOUNT_SUCCESS,
   SUBMIT_LOGIN_SUCCESS,
   SUBMIT_NEW_USER,
@@ -110,7 +111,7 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
-    case 'CLOSE_MODAL_SIGNIN':
+    case CLOSE_MODAL_SIGNIN:
       return {
         ...state,
         modal: {

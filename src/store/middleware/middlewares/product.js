@@ -9,7 +9,6 @@ const productMiddleware = (store) => (next) => (action) => {
         method: 'GET',
         url: `http://localhost:8080/api/product/${action.idProduct}`,
       };
-
       axios(config)
         .then((res) => {
           store.dispatch(getProductSuccess(res.data));
@@ -17,10 +16,10 @@ const productMiddleware = (store) => (next) => (action) => {
         .catch((error) => {
           console.log(error);
         });
-
       next(action);
       break;
     }
+
     default:
       next(action);
   }
