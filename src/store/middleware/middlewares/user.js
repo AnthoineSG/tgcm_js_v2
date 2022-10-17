@@ -58,6 +58,23 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
     }
 
+    case 'LOGOUT': {
+      const config = {
+        method: 'POST',
+        url: 'http://localhost:8080/api/user/logout',
+      };
+      axios(config)
+        // eslint-disable-next-line no-unused-vars
+        .then((_) => {
+          store.dispatch({ type: 'LOGOUT_SUCCESS' });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
+
     default:
       next(action);
   }

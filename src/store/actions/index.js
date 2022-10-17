@@ -1,3 +1,4 @@
+// ! ------------------------------------------------------------------------------------
 // ! CATEGORIES
 export const GET_CATEGORIES = 'GET_CATEGORIES';
 export const GET_CATEGORIES_SUCCESS = 'GET_CATEGORIES_SUCCESS';
@@ -17,6 +18,7 @@ export const chooseCategorie = (selected) => ({
   selected,
 });
 
+// ! ------------------------------------------------------------------------------------
 // ! BURGER MENU
 export const OPEN_BURGER = 'OPEN_BURGER';
 export const CLOSE_BURGER = 'CLOSE_BURGER';
@@ -34,6 +36,7 @@ export const changePathCloseNavbar = () => ({
   type: CHANGE_PATH_CLOSE_BURGER,
 });
 
+// ! ------------------------------------------------------------------------------------
 // ! PRODUCT
 export const GET_PRODUCT_SUB_CATEGORIES = 'GET_PRODUCT_SUB_CATEGORIES';
 export const GET_PRODUCT_SUB_CATEGORIES_SUCCESS =
@@ -61,6 +64,7 @@ export const getProductSuccess = (productInfo) => ({
   productInfo,
 });
 
+// ! ------------------------------------------------------------------------------------
 // ! BRAND
 export const GET_BRAND = 'GET_BRAND';
 export const GET_BRAND_SUCCESS = 'GET_BRAND_SUCCESS';
@@ -74,6 +78,7 @@ export const getBrandSuccess = (brands) => ({
   brands,
 });
 
+// ! ------------------------------------------------------------------------------------
 // ! USER
 export const CHANGE_INPUT_SIGNIN_VALUE = 'CHANGE_INPUT_SIGNIN_VALUE';
 export const CHANGE_INPUT_SIGNUP_VALUE = 'CHANGE_INPUT_SIGNUP_VALUE';

@@ -11,18 +11,18 @@ import {
 const initialState = {
   isLogged: false,
   userCreation: {
-    firstname: null,
-    lastname: null,
-    email: null,
-    password: null,
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
   },
   user: {
     id: null,
-    firstname: null,
-    lastname: null,
+    firstname: '',
+    lastname: '',
     birthday: null,
-    email: null,
-    password: null,
+    email: '',
+    password: '',
     phone_number: null,
     address: null,
     postal_code: null,
@@ -117,6 +117,26 @@ const reducer = (state = initialState, action = {}) => {
         modal: {
           ...state.modal,
           modalSignin: false,
+        },
+      };
+
+    case 'LOGOUT_SUCCESS':
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          email: '',
+          password: '',
+          id: null,
+          firstname: '',
+          lastname: '',
+          birthday: null,
+          phone_number: null,
+          address: null,
+          postal_code: null,
+          city: null,
+          country: null,
+          created_at: null,
         },
       };
 
