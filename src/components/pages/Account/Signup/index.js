@@ -12,8 +12,10 @@ import './signup.scss';
 function Signup() {
   const nevigate = useNavigate();
   const dispatch = useDispatch();
-  const { firstname, lastname, email, password, createAccountSuccess } =
-    useSelector((state) => state.users.userCreation);
+  const { firstname, lastname, email, password } = useSelector(
+    (state) => state.users.userCreation
+  );
+  const modalSignup = useSelector((state) => state.users.modal.modalSignup);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
@@ -32,17 +34,23 @@ function Signup() {
   return (
     <main className="signup">
       <h1 className="signup-title">Création de compte</h1>
-      {createAccountSuccess && (
-        <div>
-          <h2>Bienvenue</h2>
-          <p>
+
+      {modalSignup && (
+        <div className="signup__modal">
+          <h2 className="signup__modal-title">Bienvenue</h2>
+          <p className="signup__modal-text">
             Maintenant que vous avez cree un compte vous pouvez vous connecter
           </p>
-          <button type="button" onClick={handleRedirectAfterCreateAccount}>
+          <button
+            className="signup__modal-button"
+            type="button"
+            onClick={handleRedirectAfterCreateAccount}
+          >
             Acceder a la page de connexion
           </button>
         </div>
       )}
+
       <form className="signup__form" onSubmit={handleSubmitForm}>
         <input
           className="signup__form-items"

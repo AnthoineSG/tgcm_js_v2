@@ -10,26 +10,28 @@ import {
 const initialState = {
   isLogged: false,
   userCreation: {
-    createAccountSuccess: false,
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
+    firstname: null,
+    lastname: null,
+    email: null,
+    password: null,
   },
   user: {
-    id: 0,
-    firstname: '',
-    lastname: '',
-    birthday: '',
-    email: '',
-    password: '',
-    phone_number: '',
-    address: '',
-    postal_code: '',
-    city: '',
-    country: '',
-    created_at: '',
-    updated_at: '',
+    id: null,
+    firstname: null,
+    lastname: null,
+    birthday: null,
+    email: null,
+    password: null,
+    phone_number: null,
+    address: null,
+    postal_code: null,
+    city: null,
+    country: null,
+    created_at: null,
+  },
+  modal: {
+    modalSignin: false,
+    modalSignup: false,
   },
 };
 
@@ -52,9 +54,9 @@ const reducer = (state = initialState, action = {}) => {
     case SUBMIT_NEW_USER_SUCCESS:
       return {
         ...state,
-        userCreation: {
-          ...state.userCreation,
-          createAccountSuccess: true,
+        modal: {
+          ...state.modal,
+          modalSignup: true,
         },
       };
 
@@ -63,11 +65,14 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         userCreation: {
           ...state.userCreation,
-          createAccountSuccess: false,
-          firstname: '',
-          lastname: '',
-          email: '',
-          password: '',
+          firstname: null,
+          lastname: null,
+          email: null,
+          password: null,
+        },
+        modal: {
+          ...state.modal,
+          modalSignup: false,
         },
       };
 
@@ -83,10 +88,34 @@ const reducer = (state = initialState, action = {}) => {
     case SUBMIT_LOGIN_SUCCESS:
       return {
         ...state,
+        isLogged: true,
         user: {
           ...state.user,
           email: action.userInfos.result.email,
           password: action.userInfos.result.password,
+          id: action.userInfos.result.id,
+          firstname: action.userInfos.result.firstname,
+          lastname: action.userInfos.result.lastname,
+          birthday: action.userInfos.result.birthday,
+          phone_number: action.userInfos.result.phone_number,
+          address: action.userInfos.result.address,
+          postal_code: action.userInfos.result.postal_code,
+          city: action.userInfos.result.city,
+          country: action.userInfos.result.country,
+          created_at: action.userInfos.result.created_at,
+        },
+        modal: {
+          ...state.modal,
+          modalSignin: true,
+        },
+      };
+
+    case 'CLOSE_MODAL_SIGNIN':
+      return {
+        ...state,
+        modal: {
+          ...state.modal,
+          modalSignin: false,
         },
       };
 
