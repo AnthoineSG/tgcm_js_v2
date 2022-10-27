@@ -34,6 +34,7 @@ function App() {
 
   useEffect(() => {
     dispatch(changePathCloseNavbar());
+    window.scrollTo(0, 0);
   }, [locate.pathname]);
 
   useEffect(() => {

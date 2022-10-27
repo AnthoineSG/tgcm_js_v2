@@ -3,6 +3,7 @@ import {
   CHANGE_INPUT_SIGNUP_VALUE,
   CLOSE_MODAL_SIGNIN,
   CREATE_ACCOUNT_SUCCESS,
+  LOGOUT_SUCCESS,
   SUBMIT_LOGIN_SUCCESS,
   SUBMIT_NEW_USER,
   SUBMIT_NEW_USER_SUCCESS,
@@ -10,11 +11,13 @@ import {
 
 const initialState = {
   isLogged: false,
+  inputEmail: 'pasparla@wanadoo.fr',
+  inputPassword: '12345Aa!',
   userCreation: {
-    firstname: '',
-    lastname: '',
-    email: '',
-    password: '',
+    firstname: 'toto',
+    lastname: 'tata',
+    email: 'toto@tata.fr',
+    password: '12345Aa!',
   },
   user: {
     id: null,
@@ -41,10 +44,7 @@ const reducer = (state = initialState, action = {}) => {
     case CHANGE_INPUT_SIGNIN_VALUE:
       return {
         ...state,
-        userCreation: {
-          ...state.userCreation,
-          [action.inputName]: action.inputValue,
-        },
+        [action.inputName]: action.inputValue,
       };
 
     case SUBMIT_NEW_USER:
@@ -66,10 +66,10 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         userCreation: {
           ...state.userCreation,
-          firstname: null,
-          lastname: null,
-          email: null,
-          password: null,
+          firstname: '',
+          lastname: '',
+          email: '',
+          password: '',
         },
         modal: {
           ...state.modal,
@@ -80,8 +80,8 @@ const reducer = (state = initialState, action = {}) => {
     case CHANGE_INPUT_SIGNUP_VALUE:
       return {
         ...state,
-        user: {
-          ...state.user,
+        userCreation: {
+          ...state.userCreation,
           [action.inputName]: action.inputValue,
         },
       };
@@ -90,6 +90,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: true,
+        inputEmail: '',
+        inputPassword: '',
         user: {
           ...state.user,
           email: action.userInfos.result.email,
@@ -120,7 +122,7 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
-    case 'LOGOUT_SUCCESS':
+    case LOGOUT_SUCCESS:
       return {
         ...state,
         user: {

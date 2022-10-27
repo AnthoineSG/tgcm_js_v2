@@ -12,12 +12,13 @@ import './signin.scss';
 function Signin() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { email, password } = useSelector((state) => state.users.user);
+  const inputEmail = useSelector((state) => state.users.inputEmail);
+  const inputPassword = useSelector((state) => state.users.inputPassword);
   const modalSignin = useSelector((state) => state.users.modal.modalSignin);
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    dispatch(submitLogin(email, password));
+    dispatch(submitLogin(inputEmail, inputPassword));
   };
 
   const handleInputChange = (e) => {
@@ -72,8 +73,8 @@ function Signin() {
           placeholder="Email"
           required
           type="email"
-          name="email"
-          value={email}
+          name="inputEmail"
+          value={inputEmail}
           onChange={handleInputChange}
         />
         <input
@@ -81,8 +82,8 @@ function Signin() {
           placeholder="Password"
           required
           type="password"
-          name="password"
-          value={password}
+          name="inputPassword"
+          value={inputPassword}
           onChange={handleInputChange}
         />
         <button className="signin__form-button" type="submit">

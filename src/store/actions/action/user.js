@@ -6,19 +6,37 @@ export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS';
 export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const SUBMIT_LOGIN_SUCCESS = 'SUBMIT_LOGIN_SUCCESS';
 export const CLOSE_MODAL_SIGNIN = 'CLOSE_MODAL_SIGNIN';
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 
+/**
+ * Action creator - change input in page Sign up
+ * @param {*} inputName Name of input
+ * @param {*} inputValue Value if input
+ */
 export const changeInputSignupValue = (inputName, inputValue) => ({
-  type: CHANGE_INPUT_SIGNIN_VALUE,
-  inputName,
-  inputValue,
-});
-
-export const changeInputSigninValue = (inputName, inputValue) => ({
   type: CHANGE_INPUT_SIGNUP_VALUE,
   inputName,
   inputValue,
 });
 
+/**
+ * Action creator - Change input in page Sign in
+ * @param {*} inputName Name of input
+ * @param {*} inputValue Value if input
+ */
+export const changeInputSigninValue = (inputName, inputValue) => ({
+  type: CHANGE_INPUT_SIGNIN_VALUE,
+  inputName,
+  inputValue,
+});
+
+/**
+ * Action creator -
+ * @param {*} firstname
+ * @param {*} lastname
+ * @param {*} email
+ * @param {*} password
+ */
 export const submitNewUser = (firstname, lastname, email, password) => ({
   type: SUBMIT_NEW_USER,
   firstname,
@@ -27,25 +45,43 @@ export const submitNewUser = (firstname, lastname, email, password) => ({
   password,
 });
 
+/**
+ * Action creator -
+ */
 export const submitNewUserSuccess = () => ({
   type: SUBMIT_NEW_USER_SUCCESS,
 });
 
+/**
+ * Action creator -
+ */
 export const createNewAccountSuccess = () => ({
   type: CREATE_ACCOUNT_SUCCESS,
 });
 
+/**
+ * Action creator -
+ * @param {*} email
+ * @param {*} password
+ */
 export const submitLogin = (email, password) => ({
   type: SUBMIT_LOGIN,
   email,
   password,
 });
 
+/**
+ * Action creator -
+ * @param {*} userInfos
+ */
 export const submitLoginSuccess = (userInfos) => ({
   type: SUBMIT_LOGIN_SUCCESS,
   userInfos,
 });
 
+/**
+ * Action creator -
+ */
 export const closeModalSignin = () => ({
   type: CLOSE_MODAL_SIGNIN,
 });
