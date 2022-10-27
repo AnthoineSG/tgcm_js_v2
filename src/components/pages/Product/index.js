@@ -27,6 +27,7 @@ function Product() {
       {isLoading || (
         <>
           <Title prodCat={product.category_name} />
+
           <img
             className="product-img"
             src={product.image}
@@ -38,14 +39,18 @@ function Product() {
               prodCat={product.category_name}
               prodBra={product.brand_name}
             />
+
             <h3 className="product__infos-name">{product.product_name}</h3>
+
             <p className="product__infos-content">
               <span className="product__infos-content-span">
                 Description :{' '}
               </span>
               {product.description}
             </p>
+
             <Infos {...product} />
+
             <p className="product__infos-content">
               <span className="product__infos-content-span">Prix TTC : </span>
               {product.price_ttc} €

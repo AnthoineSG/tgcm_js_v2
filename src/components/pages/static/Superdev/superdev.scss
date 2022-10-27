@@ -1,0 +1,40 @@
+@use 'src/styles/vars';
+
+.superdev {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &-title {
+    font-size: vars.$title;
+    border-top: 1px solid black;
+    padding-top: 0.2rem;
+    margin: 2rem 0;
+  }
+
+  &__list {
+    
+    &__perso {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+
+      &-image {
+        width: 18rem;
+      }
+      &-name {
+        font-size: vars.$sub-title;
+        margin: 1rem 0;
+      }
+      &-description {
+        width: 80%;
+        text-align: center;
+      }
+      &-role {
+        margin: 1rem 0 3rem 0;
+      }
+    }
+  }
+}
