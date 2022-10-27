@@ -45,11 +45,7 @@ function Product() {
               </span>
               {product.description}
             </p>
-            <Infos
-              category_name={product.category_name}
-              sub_category_name={product.sub_category_name}
-              product={product}
-            />
+            <Infos {...product} />
             <p className="product__infos-content">
               <span className="product__infos-content-span">Prix TTC : </span>
               {product.price_ttc} €
