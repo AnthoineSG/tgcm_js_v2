@@ -11,7 +11,7 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 /**
  * Action creator - change input in page Sign up
  * @param {*} inputName Name of input
- * @param {*} inputValue Value if input
+ * @param {*} inputValue Value of input
  */
 export const changeInputSignupValue = (inputName, inputValue) => ({
   type: CHANGE_INPUT_SIGNUP_VALUE,
@@ -22,7 +22,7 @@ export const changeInputSignupValue = (inputName, inputValue) => ({
 /**
  * Action creator - Change input in page Sign in
  * @param {*} inputName Name of input
- * @param {*} inputValue Value if input
+ * @param {*} inputValue Value of input
  */
 export const changeInputSigninValue = (inputName, inputValue) => ({
   type: CHANGE_INPUT_SIGNIN_VALUE,
