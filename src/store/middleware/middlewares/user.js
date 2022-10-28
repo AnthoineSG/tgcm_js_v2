@@ -1,6 +1,8 @@
 import axios from 'axios';
 
 import {
+  loginWithLocalstorageSuccess,
+  LOGIN_WITH_LOCALSTORAGE,
   submitLoginSuccess,
   submitNewUserSuccess,
   SUBMIT_LOGIN,
@@ -50,6 +52,29 @@ const userMiddleware = (store) => (next) => (action) => {
       axios(config)
         .then((res) => {
           store.dispatch(submitLoginSuccess(res.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
+
+    case LOGIN_WITH_LOCALSTORAGE: {
+      const config = {
+        method: 'POST',
+        url: 'http://localhost:8080/api/user/login',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        data: {
+          email: action.email,
+          password: action.password,
+        },
+      };
+      axios(config)
+        .then((res) => {
+          store.dispatch(loginWithLocalstorageSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);

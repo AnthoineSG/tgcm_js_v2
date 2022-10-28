@@ -6,6 +6,7 @@ import {
   changePathCloseNavbar,
   getCategories,
   getBrand,
+  loginWithLocalstorage,
 } from 'src/store/actions';
 
 // ? COMPONENTS
@@ -40,6 +41,12 @@ function App() {
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getBrand());
+
+    const localEmail = localStorage.getItem('email');
+    const localPassword = localStorage.getItem('password');
+    if (localEmail && localPassword) {
+      dispatch(loginWithLocalstorage(localEmail, localPassword));
+    }
   }, []);
 
   return (

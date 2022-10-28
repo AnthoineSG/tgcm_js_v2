@@ -3,6 +3,7 @@ import {
   CHANGE_INPUT_SIGNUP_VALUE,
   CLOSE_MODAL_SIGNIN,
   CREATE_ACCOUNT_SUCCESS,
+  LOGIN_WITH_LOCALSTORAGE_SUCCESS,
   LOGOUT_SUCCESS,
   SUBMIT_LOGIN_SUCCESS,
   SUBMIT_NEW_USER,
@@ -11,6 +12,7 @@ import {
 
 const initialState = {
   isLogged: false,
+  logLocalstorage: false,
   inputEmail: 'pasparla@wanadoo.fr',
   inputPassword: '12345Aa!',
   userCreation: {
@@ -110,6 +112,28 @@ const reducer = (state = initialState, action = {}) => {
         modal: {
           ...state.modal,
           modalSignin: true,
+        },
+      };
+
+    case LOGIN_WITH_LOCALSTORAGE_SUCCESS:
+      return {
+        ...state,
+        isLogged: true,
+        logLocalstorage: true,
+        user: {
+          ...state.user,
+          email: action.userInfos.result.email,
+          password: action.userInfos.result.password,
+          id: action.userInfos.result.id,
+          firstname: action.userInfos.result.firstname,
+          lastname: action.userInfos.result.lastname,
+          birthday: action.userInfos.result.birthday,
+          phone_number: action.userInfos.result.phone_number,
+          address: action.userInfos.result.address,
+          postal_code: action.userInfos.result.postal_code,
+          city: action.userInfos.result.city,
+          country: action.userInfos.result.country,
+          created_at: action.userInfos.result.created_at,
         },
       };
 

@@ -7,6 +7,9 @@ export const SUBMIT_LOGIN = 'SUBMIT_LOGIN';
 export const SUBMIT_LOGIN_SUCCESS = 'SUBMIT_LOGIN_SUCCESS';
 export const CLOSE_MODAL_SIGNIN = 'CLOSE_MODAL_SIGNIN';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
+export const LOGIN_WITH_LOCALSTORAGE = 'LOGIN_WITH_LOCALSTORAGE';
+export const LOGIN_WITH_LOCALSTORAGE_SUCCESS =
+  'LOGIN_WITH_LOCALSTORAGE_SUCCESS';
 
 /**
  * Action creator - change input in page Sign up
@@ -84,4 +87,15 @@ export const submitLoginSuccess = (userInfos) => ({
  */
 export const closeModalSignin = () => ({
   type: CLOSE_MODAL_SIGNIN,
+});
+
+export const loginWithLocalstorage = (email, password) => ({
+  type: LOGIN_WITH_LOCALSTORAGE,
+  email,
+  password,
+});
+
+export const loginWithLocalstorageSuccess = (userInfos) => ({
+  type: LOGIN_WITH_LOCALSTORAGE_SUCCESS,
+  userInfos,
 });

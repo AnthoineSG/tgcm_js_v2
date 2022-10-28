@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { changeInputSigninValue, submitLogin } from 'src/store/actions';
-import InputCustom from 'src/components/inputCustom';
+import InputCustom from 'src/components/InputCustom';
 import SigninModal from './SigninModal';
 
 import './signin.scss';
@@ -15,6 +15,8 @@ function Signin() {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    localStorage.setItem('email', inputEmail);
+    localStorage.setItem('password', inputPassword);
     dispatch(submitLogin(inputEmail, inputPassword));
   };
 

@@ -7,9 +7,10 @@ function Profil() {
   const dispatch = useDispatch();
   const userIsLogged = useSelector((state) => state.users.isLogged);
   const userInfos = useSelector((state) => state.users.user);
+  const logLocalstorage = useSelector((state) => state.users.logLocalstorage);
 
   useEffect(() => {
-    if (userIsLogged === false) {
+    if (userIsLogged === false && logLocalstorage === true) {
       navigate('/signin');
     }
   }, []);
