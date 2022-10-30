@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { chooseCategorie, closeBurger } from 'src/store/actions';
 
@@ -41,13 +41,17 @@ function NavBar() {
           </button>
           {categorieSelected === categorie.category &&
             categorie.sub_category.map((sub) => (
-              <Link
-                className="navbar__menu-subcategories"
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? 'navbar__menu-subcategories navbar__menu-subcategories-active'
+                    : 'navbar__menu-subcategories'
+                }
                 to={`/category/${sub}`}
                 key={sub}
               >
                 {sub}
-              </Link>
+              </NavLink>
             ))}
         </div>
       ))}

@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import facebookIcon from 'src/assets/logo/facebook.svg';
 import twitterIcon from 'src/assets/logo/twitter.svg';
 import instagramIcon from 'src/assets/logo/instagram.svg';
+
+import { footerLinkData } from 'src/data/linkData';
 
 import './footer.scss';
 
@@ -33,21 +35,19 @@ function Footer() {
       </div>
 
       <nav className="footer__pages">
-        <Link to="/cgv" className="footer__pages-link">
-          CGV
-        </Link>
-        <Link to="/faq" className="footer__pages-link">
-          FAQ
-        </Link>
-        <Link to="/blog" className="footer__pages-link">
-          BLOG
-        </Link>
-        <Link to="/contact" className="footer__pages-link">
-          Nous contacter
-        </Link>
-        <Link to="/superdev" className="footer__pages-link">
-          Super Dev
-        </Link>
+        {footerLinkData.map((link) => (
+          <NavLink
+            key={link.id}
+            to={link.to}
+            className={({ isActive }) =>
+              isActive
+                ? 'footer__pages-link footer__pages-link-active'
+                : 'footer__pages-link'
+            }
+          >
+            {link.text}
+          </NavLink>
+        ))}
       </nav>
     </footer>
   );

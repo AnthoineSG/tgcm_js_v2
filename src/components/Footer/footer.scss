@@ -40,6 +40,10 @@
     justify-content: center;
     &-link {
       margin: 1rem 2rem;
+      &-active {
+        border-top: 1px solid white;
+        padding: 0.2rem 0;
+      }
     }
   }
 }
