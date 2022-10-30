@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+import { profilInfosData } from 'src/data/profilData';
+
+import './profil.scss';
+
 function Profil() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -15,19 +19,14 @@ function Profil() {
     }
   }, []);
 
-  const handleInfosIsNull = (info) => {
+  const handleInfosIsNull = (info, type) => {
     if (info === '' || info === null) {
       return 'Information non communiquer';
     }
-    return info;
-  };
-
-  const handleInfosIsDate = (date) => {
-    if (date === '' || date === null) {
-      return 'Information non communiquer';
+    if (type === 'created_at') {
+      return new Date(info).toLocaleDateString('fr-FR');
     }
-    const newDate = new Date(date).toLocaleDateString('fr-FR');
-    return newDate;
+    return info;
   };
 
   const handleClickLogout = () => {
@@ -35,23 +34,28 @@ function Profil() {
   };
 
   return (
-    <main>
-      <h1>Profil</h1>
+    <main className="profil">
+      <h1 className="profil-title">Profil</h1>
 
-      <div>
-        <p>Prenom : {handleInfosIsNull(userInfos.firstname)}</p>
-        <p>Nom : {handleInfosIsNull(userInfos.lastname)}</p>
-        <p>Date de naissance : {handleInfosIsNull(userInfos.birthday)}</p>
-        <p>Email : {handleInfosIsNull(userInfos.email)}</p>
-        <p>Numero de telephone : {handleInfosIsNull(userInfos.phone_number)}</p>
-        <p>Adresse : {handleInfosIsNull(userInfos.address)}</p>
-        <p>Code postal : {handleInfosIsNull(userInfos.postal_code)}</p>
-        <p>Ville : {handleInfosIsNull(userInfos.city)}</p>
-        <p>Pays : {handleInfosIsNull(userInfos.country)}</p>
-        <p>Date de creation : {handleInfosIsDate(userInfos.created_at)}</p>
+      <div className="profil__infos">
+        {profilInfosData.map((profil) => (
+          <div className="profil__infos__items" key={profil.id}>
+            <p className="profil__infos__items-title">{profil.title}</p>
+            <span className="profil__infos__items-content">
+              {handleInfosIsNull(
+                userInfos[profil.dataToShearch],
+                profil.dataToShearch
+              )}
+            </span>
+          </div>
+        ))}
       </div>
 
-      <button type="button" onClick={handleClickLogout}>
+      <button
+        className="profil-button"
+        type="button"
+        onClick={handleClickLogout}
+      >
         Se deconnecter
       </button>
     </main>
