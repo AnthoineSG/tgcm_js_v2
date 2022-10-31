@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { changeInputSigninValue, submitLogin } from 'src/store/actions';
 import InputCustom from 'src/components/InputCustom';
+import ButtonCustom from 'src/components/ButtonCustom';
 import SigninModal from './SigninModal';
 
 import './signin.scss';
@@ -45,9 +46,7 @@ function Signin() {
           value={inputPassword}
           action={changeInputSigninValue}
         />
-        <button className="signin__form-button" type="submit">
-          Se connecter
-        </button>
+        <ButtonCustom text="Se connecter" type="submit" color="green" />
       </form>
 
       <p className="signin-reinitialise">Réinitialiser son mot de passe</p>

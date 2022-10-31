@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { profilInfosData } from 'src/data/profilData';
 import { logout } from 'src/store/actions';
 
+import ButtonCustom from 'src/components/ButtonCustom';
+
 import './profil.scss';
 
 function Profil() {
@@ -52,13 +54,12 @@ function Profil() {
         ))}
       </div>
 
-      <button
-        className="profil-button"
+      <ButtonCustom
+        text="Se deconnecter"
+        click={handleClickLogout}
         type="button"
-        onClick={handleClickLogout}
-      >
-        Se deconnecter
-      </button>
+        color="orange"
+      />
     </main>
   );
 }

@@ -88,6 +88,10 @@
       border: none;
       padding: 0.8rem 0;
       width: 10em;
+      &:hover {
+        color: vars.$services;
+        background-color: vars.$text-dark-blue;
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import ButtonCustom from '../../../ButtonCustom';
 
 function Button({ prodCat }) {
   const user = {
@@ -14,25 +15,12 @@ function Button({ prodCat }) {
   };
 
   return (
-    <button
-      className={
-        prodCat
-          ? (prodCat === 'mode' && 'product-button product-button-mode') ||
-            (prodCat === 'beaute' && 'product-button product-button-beaute') ||
-            (prodCat === 'alimentation' &&
-              'product-button product-button-alimentation') ||
-            (prodCat === 'services' &&
-              'product-button product-button-services') ||
-            (prodCat === 'loisirs' &&
-              'product-button product-button-loisirs') ||
-            (prodCat === 'maison' && 'product-button product-button-maison')
-          : undefined
-      }
+    <ButtonCustom
+      text="Ajouter au panier"
+      click={handleAddBasket}
       type="button"
-      onClick={handleAddBasket}
-    >
-      Ajouter au panier
-    </button>
+      color={prodCat}
+    />
   );
 }
 

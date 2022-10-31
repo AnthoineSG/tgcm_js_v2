@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBasket } from 'src/store/actions';
 
-import ButtonCustom from '../../../ButtonCustom';
+import ButtonCustom from 'src/components/ButtonCustom';
 
 import './basket.scss';
 
@@ -60,9 +60,10 @@ function Basket() {
           </div>
 
           <ButtonCustom
-            classe="basket__content-button"
             text="Valider mon panier"
             click={handleClickBasket}
+            type="button"
+            color="orange"
           />
         </div>
       ) : (

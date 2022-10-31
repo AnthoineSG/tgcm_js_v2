@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { changeInputSignupValue, submitNewUser } from 'src/store/actions';
 import InputCustom from 'src/components/InputCustom';
+import ButtonCustom from 'src/components/ButtonCustom';
 import SignupModal from './SignupModal';
 
 import './signup.scss';
@@ -61,9 +62,7 @@ function Signup() {
           value={password}
           action={changeInputSignupValue}
         />
-        <button className="signup__form-button" type="submit">
-          Créer un compte
-        </button>
+        <ButtonCustom text="Créer un compte" type="submit" color="orange" />
       </form>
     </main>
   );
