@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getBasket } from 'src/store/actions';
 
+import ButtonCustom from '../../../ButtonCustom';
+
 import './basket.scss';
 
 function Basket() {
@@ -14,6 +16,10 @@ function Basket() {
       dispatch(getBasket());
     }
   }, [isLogged]);
+
+  const handleClickBasket = () => {
+    console.log('click');
+  };
 
   return (
     <main className="basket">
@@ -53,9 +59,11 @@ function Basket() {
             <span>{basket.final_price} €</span>
           </div>
 
-          <button className="basket__content-button" type="button">
-            Valider mon panier
-          </button>
+          <ButtonCustom
+            classe="basket__content-button"
+            text="Valider mon panier"
+            click={handleClickBasket}
+          />
         </div>
       ) : (
         <div>ya pas de panier</div>

@@ -1,0 +1,12 @@
+@use 'src/styles/vars';
+
+.buttonCutom {
+  border: none;
+  background-color: vars.$button-orange;
+  margin: 1.5rem 0 3rem 0;
+  padding: 0.8rem 1rem;
+  font-size: 1.8rem;
+  font-weight: vars.$bold;
+  color: vars.$text-dark-blue;
+  width: 10em;
+}
