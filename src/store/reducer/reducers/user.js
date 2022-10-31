@@ -129,6 +129,7 @@ const reducer = (state = initialState, action = {}) => {
         logLocalstorage: true,
         user: {
           ...state.user,
+          tokenJwt: action.userInfos.accessToken,
           email: action.userInfos.result.email,
           password: action.userInfos.result.password,
           id: action.userInfos.result.id,

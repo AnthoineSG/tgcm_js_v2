@@ -1,0 +1,51 @@
+@use 'src/styles/vars';
+
+.basket {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  &-title {
+    font-size: vars.$title;
+    border-top: vars.$borderTop;
+    padding-top: vars.$paddingTop;
+    margin: vars.$marginTitle;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    &__product {
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      width: 100%;
+      &-items {
+        
+        &-green {
+        color: vars.$beaute;
+        }
+        &-img {
+          width: 100%;
+        }
+      }
+    }
+    &-info {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.2rem;
+      font-family: vars.$bold;
+      margin-bottom: 0.2rem;
+      &-green {
+        color: vars.$beaute;
+      }
+    }
+
+  }
+}
