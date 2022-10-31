@@ -52,6 +52,10 @@ function Basket() {
             <p>Total TTC </p>
             <span>{basket.final_price} €</span>
           </div>
+
+          <button className="basket__content-button" type="button">
+            Valider mon panier
+          </button>
         </div>
       ) : (
         <div>ya pas de panier</div>
