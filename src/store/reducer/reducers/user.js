@@ -92,6 +92,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         isLogged: true,
+        logLocalstorage: true,
         inputEmail: '',
         inputPassword: '',
         user: {
@@ -146,9 +147,18 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
+    case 'LOGOUT':
+      return {
+        ...state,
+        isLogged: false,
+        logLocalstorage: false,
+      };
+
     case LOGOUT_SUCCESS:
       return {
         ...state,
+        isLogged: false,
+        logLocalstorage: false,
         user: {
           ...state.user,
           email: '',

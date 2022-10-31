@@ -14,10 +14,10 @@ function Profil() {
   const logLocalstorage = useSelector((state) => state.users.logLocalstorage);
 
   useEffect(() => {
-    if (userIsLogged === false && logLocalstorage === true) {
+    if (userIsLogged === false && logLocalstorage === false) {
       navigate('/signin');
     }
-  }, []);
+  }, [userIsLogged, logLocalstorage]);
 
   const handleInfosIsNull = (info, type) => {
     if (info === '' || info === null) {
