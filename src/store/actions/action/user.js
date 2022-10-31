@@ -10,6 +10,9 @@ export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGIN_WITH_LOCALSTORAGE = 'LOGIN_WITH_LOCALSTORAGE';
 export const LOGIN_WITH_LOCALSTORAGE_SUCCESS =
   'LOGIN_WITH_LOCALSTORAGE_SUCCESS';
+export const LOGOUT = 'LOGOUT';
+export const GET_BASKET = 'GET_BASKET';
+export const GET_BASKET_SUCCESS = 'GET_BASKET_SUCCESS';
 
 /**
  * Action creator - change input in page Sign up
@@ -98,4 +101,21 @@ export const loginWithLocalstorage = (email, password) => ({
 export const loginWithLocalstorageSuccess = (userInfos) => ({
   type: LOGIN_WITH_LOCALSTORAGE_SUCCESS,
   userInfos,
+});
+
+export const logout = () => ({
+  type: LOGOUT,
+});
+
+export const logoutSuccess = () => ({
+  type: LOGOUT_SUCCESS,
+});
+
+export const getBasket = () => ({
+  type: GET_BASKET,
+});
+
+export const getBasketSuccess = (userBasket) => ({
+  type: GET_BASKET_SUCCESS,
+  userBasket,
 });

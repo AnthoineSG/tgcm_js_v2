@@ -3,7 +3,10 @@ import {
   CHANGE_INPUT_SIGNUP_VALUE,
   CLOSE_MODAL_SIGNIN,
   CREATE_ACCOUNT_SUCCESS,
+  GET_BASKET,
+  GET_BASKET_SUCCESS,
   LOGIN_WITH_LOCALSTORAGE_SUCCESS,
+  LOGOUT,
   LOGOUT_SUCCESS,
   SUBMIT_LOGIN_SUCCESS,
   SUBMIT_NEW_USER,
@@ -22,6 +25,7 @@ const initialState = {
     password: '12345Aa!',
   },
   user: {
+    tokenJwt: '',
     id: null,
     firstname: '',
     lastname: '',
@@ -35,6 +39,7 @@ const initialState = {
     country: null,
     created_at: null,
   },
+  basket: {},
   modal: {
     modalSignin: false,
     modalSignup: false,
@@ -97,6 +102,7 @@ const reducer = (state = initialState, action = {}) => {
         inputPassword: '',
         user: {
           ...state.user,
+          tokenJwt: action.userInfos.accessToken,
           email: action.userInfos.result.email,
           password: action.userInfos.result.password,
           id: action.userInfos.result.id,
@@ -147,11 +153,23 @@ const reducer = (state = initialState, action = {}) => {
         },
       };
 
-    case 'LOGOUT':
+    case GET_BASKET:
+      return {
+        ...state,
+      };
+
+    case GET_BASKET_SUCCESS:
+      return {
+        ...state,
+        basket: action.userBasket,
+      };
+
+    case LOGOUT:
       return {
         ...state,
         isLogged: false,
         logLocalstorage: false,
+        basket: {},
       };
 
     case LOGOUT_SUCCESS:

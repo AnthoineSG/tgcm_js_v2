@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { profilInfosData } from 'src/data/profilData';
+import { logout } from 'src/store/actions';
 
 import './profil.scss';
 
@@ -30,7 +31,7 @@ function Profil() {
   };
 
   const handleClickLogout = () => {
-    dispatch({ type: 'LOGOUT' });
+    dispatch(logout());
   };
 
   return (

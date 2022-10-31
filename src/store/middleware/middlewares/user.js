@@ -1,8 +1,12 @@
 import axios from 'axios';
 
 import {
+  getBasketSuccess,
+  GET_BASKET,
   loginWithLocalstorageSuccess,
   LOGIN_WITH_LOCALSTORAGE,
+  LOGOUT,
+  logoutSuccess,
   submitLoginSuccess,
   submitNewUserSuccess,
   SUBMIT_LOGIN,
@@ -84,23 +88,22 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case 'GET_BASKET': {
+    case GET_BASKET: {
       const userEmail = store.getState().users.user.email;
-
-      console.log(userEmail);
+      const token = store.getState().users.user.tokenJwt;
 
       const config = {
         method: 'GET',
-        // url: `http://localhost:8080/api/user/${userEmail}/product`,
-        url: `http://localhost:8080/api/user/pasparla@wanadoo.fr/product`,
+        url: `http://localhost:8080/api/user/${userEmail}/product`,
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         withCredentials: true,
       };
       axios(config)
         .then((res) => {
-          console.log(res.data);
+          store.dispatch(getBasketSuccess(res.data));
         })
         .catch((error) => {
           console.log(error);
@@ -109,7 +112,7 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
     }
 
-    case 'LOGOUT': {
+    case LOGOUT: {
       localStorage.removeItem('email');
       localStorage.removeItem('password');
 
@@ -120,7 +123,7 @@ const userMiddleware = (store) => (next) => (action) => {
       axios(config)
         // eslint-disable-next-line no-unused-vars
         .then((_) => {
-          store.dispatch({ type: 'LOGOUT_SUCCESS' });
+          store.dispatch(logoutSuccess());
         })
         .catch((error) => {
           console.log(error);
