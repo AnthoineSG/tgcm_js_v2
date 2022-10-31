@@ -83,6 +83,31 @@ const userMiddleware = (store) => (next) => (action) => {
       break;
     }
 
+    case 'GET_BASKET': {
+      const userEmail = store.getState().users.user.email;
+
+      console.log(userEmail);
+
+      const config = {
+        method: 'GET',
+        // url: `http://localhost:8080/api/user/${userEmail}/product`,
+        url: `http://localhost:8080/api/user/pasparla@wanadoo.fr/product`,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        withCredentials: true,
+      };
+      axios(config)
+        .then((res) => {
+          console.log(res.data);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
+
     case 'LOGOUT': {
       const config = {
         method: 'POST',

@@ -19,7 +19,9 @@ function Icons() {
       <Link to="/account">
         <img className="icons-items" src={profilIcon} alt="icon de profil" />
       </Link>
-      <img className="icons-items" src={basketIcon} alt="icon de panier" />
+      <Link to="/basket">
+        <img className="icons-items" src={basketIcon} alt="icon de panier" />
+      </Link>
     </div>
   );
 }

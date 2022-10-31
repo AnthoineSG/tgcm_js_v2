@@ -20,6 +20,7 @@ import Product from 'src/components/pages/Product';
 import Profil from 'src/components/pages/Account/Profil';
 import Signup from 'src/components/pages/Account/Signup';
 import Signin from 'src/components/pages/Account/Signin';
+import Basket from 'src/components/pages/Account/Basket';
 // ? STATIC
 import Cgv from 'src/components/pages/static/Cgv';
 import Faq from 'src/components/pages/static/Faq';
@@ -57,9 +58,10 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/category/:subcategory" element={<SubCategory />} />
         <Route path="/product/:id" element={<Product />} />
-        <Route path="/account" element={<Profil />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path="/account" element={<Profil />} />
+        <Route path="/basket" element={<Basket />} />
 
         {/* STATIC */}
         <Route path="/cgv" element={<Cgv />} />
