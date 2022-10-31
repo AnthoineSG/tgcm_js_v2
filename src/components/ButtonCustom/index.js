@@ -11,26 +11,26 @@ const colorChoose = (color) =>
   (color === 'loisirs' && '#ccd463') ||
   (color === 'maison' && '#9c715d');
 
-function ButtonCustom({ text, click, type, color }) {
-  const Button = styled.button`
-    width: 10em;
-    font-size: 1.8rem;
-    fontweight: eina01Bold;
-    cursor: pointer;
-    border: none;
-    color: #1c213c;
-    background-color: ${colorChoose(color)};
-    margin: 1.5rem 0 3rem 0;
-    padding: 0.8rem 1rem;
-    transition: 0.3s background;
-    &:hover {
-      color: ${colorChoose(color)};
-      background: #1c213c;
-    }
-  `;
+const Button = styled.button`
+  width: 10em;
+  font-size: 1.8rem;
+  fontweight: eina01Bold;
+  cursor: pointer;
+  border: none;
+  color: #1c213c;
+  background-color: ${(props) => colorChoose(props.color)};
+  margin: 1.5rem 0 3rem 0;
+  padding: 0.8rem 1rem;
+  transition: 0.3s background;
+  &:hover {
+    color: ${(props) => colorChoose(props.color)};
+    background: #1c213c;
+  }
+`;
 
+function ButtonCustom({ text, click, type, color }) {
   return (
-    <Button type={type} onClick={click}>
+    <Button type={type} onClick={click} color={color}>
       {text}
     </Button>
   );

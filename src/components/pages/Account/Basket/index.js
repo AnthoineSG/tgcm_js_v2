@@ -27,8 +27,9 @@ function Basket() {
 
       {isLogged ? (
         <div className="basket__content">
-          {basket.product?.map((prod) => (
-            <div className="basket__content__product" key={prod.name}>
+          {basket.product?.map((prod, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div className="basket__content__product" key={index}>
               <p className="basket__content__product-items basket__content__product-items-green">
                 Marque d'id : {prod.brand_id}
               </p>
