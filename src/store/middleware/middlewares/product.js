@@ -1,6 +1,10 @@
 import axios from 'axios';
 
-import { getProductSuccess, GET_PRODUCT } from '../../actions';
+import {
+  ADD_PRODUCT_BASKET,
+  getProductSuccess,
+  GET_PRODUCT,
+} from '../../actions';
 
 const productMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
@@ -12,6 +16,32 @@ const productMiddleware = (store) => (next) => (action) => {
       axios(config)
         .then((res) => {
           store.dispatch(getProductSuccess(res.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      next(action);
+      break;
+    }
+
+    case ADD_PRODUCT_BASKET: {
+      const token = store.getState().users.user.tokenJwt;
+      const userEmail = store.getState().users.user.email;
+      const config = {
+        method: 'POST',
+        url: `http://localhost:8080/api/product/${action.productId}/user`,
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          email: userEmail,
+        },
+        withCredentials: true,
+      };
+      axios(config)
+        .then((res) => {
+          console.log(res.data);
         })
         .catch((error) => {
           console.log(error);

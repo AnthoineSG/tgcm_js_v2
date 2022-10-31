@@ -3,6 +3,7 @@ export const GET_PRODUCT_SUB_CATEGORIES_SUCCESS =
   'GET_PRODUCT_SUB_CATEGORIES_SUCCESS';
 export const GET_PRODUCT = 'GET_PRODUCT';
 export const GET_PRODUCT_SUCCESS = 'GET_PRODUCT_SUCCESS';
+export const ADD_PRODUCT_BASKET = 'ADD_PRODUCT_BASKET';
 
 /**
  * Action creator -
@@ -38,4 +39,9 @@ export const getProduct = (idProduct) => ({
 export const getProductSuccess = (productInfo) => ({
   type: GET_PRODUCT_SUCCESS,
   productInfo,
+});
+
+export const addProductBasket = (productId) => ({
+  type: ADD_PRODUCT_BASKET,
+  productId,
 });

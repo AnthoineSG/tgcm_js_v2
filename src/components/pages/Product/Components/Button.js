@@ -1,17 +1,16 @@
 import PropTypes from 'prop-types';
-import ButtonCustom from '../../../ButtonCustom';
+import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
+import { addProductBasket } from 'src/store/actions';
+import ButtonCustom from 'src/components/ButtonCustom';
 
 function Button({ prodCat }) {
-  const user = {
-    email: 'toto@toto.fr',
-    password: 'jeng',
-    token: 'klsnfgknf',
-  };
+  const dispatch = useDispatch();
+  const params = useParams();
 
   const handleAddBasket = () => {
-    if (user) {
-      console.log('ajout au pannier de : ', user.email);
-    }
+    dispatch(addProductBasket(params.id));
   };
 
   return (
