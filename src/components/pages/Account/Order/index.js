@@ -1,76 +1,106 @@
+import { useSelector } from 'react-redux';
+
 import ButtonCustom from 'src/components/ButtonCustom';
+import InputCustom from 'src/components/InputCustom';
+import { changeInputOrderValue } from 'src/store/actions';
 
 import './order.scss';
 
 function Order() {
-  const handleSubmitOrder = () => {
-    console.log('Validation de la commande');
+  const { firstname, lastname, address, postalCode, city, phoneNumber } =
+    useSelector((state) => state.users.order);
+
+  const handleSubmitOrder = (e) => {
+    e.preventDefault();
+    console.log('Submit');
+  };
+
+  const handleButtonOrder = () => {
+    console.log('click');
   };
 
   return (
     <main className="order">
       <h1 className="order-title">Commande</h1>
-      <form className="order__form">
+      <form className="order__form" onSubmit={handleSubmitOrder}>
         <fieldset className="order__form__fieldset">
           <legend className="order__form__fieldset-title">
             Adresse d'expédition
           </legend>
-          <label className="order__form__fieldset-label" htmlFor="prenom">
+
+          <div className="order__form__fieldset-label">
             <p className="order__form__fieldset-label-text">Prenom</p>
-            <input
+            <InputCustom
               className="order__form__fieldset-input"
-              id="prenom"
+              name="firstname"
               placeholder="Votre Prenom"
               type="text"
+              value={firstname}
+              action={changeInputOrderValue}
             />
-          </label>
-          <label className="order__form__fieldset-label" htmlFor="nom">
+          </div>
+
+          <div className="order__form__fieldset-label">
             <p className="order__form__fieldset-label-text">Nom</p>
-            <input
+            <InputCustom
               className="order__form__fieldset-input"
-              id="nom"
+              name="lastname"
               placeholder="Votre Nom"
               type="text"
+              value={lastname}
+              action={changeInputOrderValue}
             />
-          </label>
-          <label className="order__form__fieldset-label" htmlFor="address">
+          </div>
+
+          <div className="order__form__fieldset-label">
             <p className="order__form__fieldset-label-text">Adresse</p>
-            <input
+            <InputCustom
               className="order__form__fieldset-input"
-              id="address"
+              name="address"
               placeholder="Votre Adresse"
               type="text"
+              value={address}
+              action={changeInputOrderValue}
             />
-          </label>
-          <label className="order__form__fieldset-label" htmlFor="postalCode">
+          </div>
+
+          <div className="order__form__fieldset-label">
             <p className="order__form__fieldset-label-text">Code postal</p>
-            <input
+            <InputCustom
               className="order__form__fieldset-input"
-              id="postalCode"
+              name="postalCode"
               placeholder="Votre Code postal"
               type="text"
+              value={postalCode}
+              action={changeInputOrderValue}
             />
-          </label>
-          <label className="order__form__fieldset-label" htmlFor="city">
+          </div>
+
+          <div className="order__form__fieldset-label">
             <p className="order__form__fieldset-label-text">Ville</p>
-            <input
+            <InputCustom
               className="order__form__fieldset-input"
-              id="city"
+              name="city"
               placeholder="Votre Ville"
               type="text"
+              value={city}
+              action={changeInputOrderValue}
             />
-          </label>
-          <label className="order__form__fieldset-label" htmlFor="phoneNumber">
+          </div>
+
+          <div className="order__form__fieldset-label">
             <p className="order__form__fieldset-label-text">
               Numéro de téléphone
             </p>
-            <input
+            <InputCustom
               className="order__form__fieldset-input"
-              id="phoneNumber"
+              name="phoneNumber"
               placeholder="Votre Numéro de téléphone"
               type="text"
+              value={phoneNumber}
+              action={changeInputOrderValue}
             />
-          </label>
+          </div>
         </fieldset>
 
         <fieldset className="order__form__fieldset">
@@ -85,7 +115,7 @@ function Order() {
               placeholder="Votre Prenom"
               type="radio"
               name="card"
-              checked
+              defaultChecked
             />
           </label>
           <label className="order__form__fieldset-labelRadio" htmlFor="prenom">
@@ -111,8 +141,8 @@ function Order() {
 
         <ButtonCustom
           text="Valider mon panier"
-          click={handleSubmitOrder}
-          type="button"
+          click={handleButtonOrder}
+          type="submit"
           color="orange"
         />
       </form>

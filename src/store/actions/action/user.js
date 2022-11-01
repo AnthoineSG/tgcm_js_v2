@@ -13,6 +13,7 @@ export const LOGIN_WITH_LOCALSTORAGE_SUCCESS =
 export const LOGOUT = 'LOGOUT';
 export const GET_BASKET = 'GET_BASKET';
 export const GET_BASKET_SUCCESS = 'GET_BASKET_SUCCESS';
+export const CHANGE_INPUT_ORDER_VALUE = 'CHANGE_INPUT_ORDER_VALUE';
 
 /**
  * Action creator - change input in page Sign up
@@ -118,4 +119,10 @@ export const getBasket = () => ({
 export const getBasketSuccess = (userBasket) => ({
   type: GET_BASKET_SUCCESS,
   userBasket,
+});
+
+export const changeInputOrderValue = (inputName, inputValue) => ({
+  type: CHANGE_INPUT_ORDER_VALUE,
+  inputName,
+  inputValue,
 });

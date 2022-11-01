@@ -1,4 +1,5 @@
 import {
+  CHANGE_INPUT_ORDER_VALUE,
   CHANGE_INPUT_SIGNIN_VALUE,
   CHANGE_INPUT_SIGNUP_VALUE,
   CLOSE_MODAL_SIGNIN,
@@ -40,6 +41,14 @@ const initialState = {
     created_at: null,
   },
   basket: {},
+  order: {
+    firstname: '',
+    lastname: '',
+    address: '',
+    postalCode: '',
+    city: '',
+    phoneNumber: '',
+  },
   modal: {
     modalSignin: false,
     modalSignup: false,
@@ -52,6 +61,15 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         [action.inputName]: action.inputValue,
+      };
+
+    case CHANGE_INPUT_ORDER_VALUE:
+      return {
+        ...state,
+        order: {
+          ...state.order,
+          [action.inputName]: action.inputValue,
+        },
       };
 
     case SUBMIT_NEW_USER:

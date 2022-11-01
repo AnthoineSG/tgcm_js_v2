@@ -6,6 +6,7 @@ function InputCustom({
   className,
   required,
   type,
+  id,
   name,
   value,
   action,
@@ -18,9 +19,10 @@ function InputCustom({
 
   return (
     <input
-      placeholder={placeholder}
       className={className}
+      placeholder={placeholder}
       required={required}
+      id={id}
       type={type}
       name={name}
       value={value}
@@ -29,11 +31,17 @@ function InputCustom({
   );
 }
 
+InputCustom.defaultProps = {
+  id: '',
+  required: null,
+};
+
 InputCustom.propTypes = {
   placeholder: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
-  required: PropTypes.bool.isRequired,
+  required: PropTypes.bool,
   type: PropTypes.string.isRequired,
+  id: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   action: PropTypes.func.isRequired,
