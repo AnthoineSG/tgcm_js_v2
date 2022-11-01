@@ -21,6 +21,7 @@ import Profil from 'src/components/pages/Account/Profil';
 import Signup from 'src/components/pages/Account/Signup';
 import Signin from 'src/components/pages/Account/Signin';
 import Basket from 'src/components/pages/Account/Basket';
+import Order from 'src/components/pages/Account/Order';
 // ? STATIC
 import Cgv from 'src/components/pages/static/Cgv';
 import Faq from 'src/components/pages/static/Faq';
@@ -62,6 +63,7 @@ function App() {
         <Route path="/signin" element={<Signin />} />
         <Route path="/account" element={<Profil />} />
         <Route path="/basket" element={<Basket />} />
+        <Route path="/order" element={<Order />} />
 
         {/* STATIC */}
         <Route path="/cgv" element={<Cgv />} />

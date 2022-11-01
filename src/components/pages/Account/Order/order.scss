@@ -1,0 +1,64 @@
+@use 'src/styles/vars';
+
+.order {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-between;
+  &-title {
+    font-size: vars.$title;
+    border-top: vars.$borderTop;
+    padding-top: vars.$paddingTop;
+    margin: vars.$marginTitle;
+  }
+
+  &__form {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+
+    &__fieldset {
+      width: 100%;
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      &-title {
+        font-size: vars.$sub-title;
+        margin-bottom: 1rem;
+        font-family: vars.$bold;
+      }
+
+      &-label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 0;
+        border: 1px solid vars.$beaute;
+        padding: 0.4rem 0.3rem;
+        cursor: default;
+        &-text {
+          width: 35%;
+          font-family: vars.$bold;
+        }
+      }
+      &-input {
+        text-align: right;
+        border: none;
+        font-size: 1.1rem;
+        width: 65%;
+      }
+
+      &-labelRadio {
+        display: flex;
+        justify-content: space-between;
+        margin: 0.5rem 0;
+      }
+      &-radio {
+        accent-color: vars.$text-dark-blue;
+      }
+    }
+  }
+}
