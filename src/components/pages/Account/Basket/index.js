@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 import { getBasket } from 'src/store/actions';
 
 import ButtonCustom from 'src/components/ButtonCustom';
@@ -7,6 +9,7 @@ import ButtonCustom from 'src/components/ButtonCustom';
 import './basket.scss';
 
 function Basket() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.users.isLogged);
   const basket = useSelector((state) => state.users.basket);
@@ -18,7 +21,7 @@ function Basket() {
   }, [isLogged]);
 
   const handleClickBasket = () => {
-    console.log('click');
+    navigate('/order');
   };
 
   return (
