@@ -5,6 +5,7 @@ import brandReducer from './reducers/brand';
 import categoriesReducer from './reducers/categories';
 import productReducer from './reducers/product';
 import userReducer from './reducers/user';
+import newsLetterReducer from './reducers/newsletter';
 
 const rootReducer = combineReducers({
   burger: burgerReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   products: productReducer,
   brands: brandReducer,
   users: userReducer,
+  newsLetter: newsLetterReducer,
 });
 
 export default rootReducer;
