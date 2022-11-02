@@ -16,8 +16,15 @@ function Signin() {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
-    localStorage.setItem('email', inputEmail);
-    localStorage.setItem('password', inputPassword);
+    localStorage.setItem(
+      'userInfos',
+      JSON.stringify({
+        localEmail: inputEmail,
+        localPassword: inputPassword,
+        timestamp: new Date().getTime(),
+      })
+    );
+    // localStorage.setItem('password', inputPassword);
     dispatch(submitLogin(inputEmail, inputPassword));
   };
 

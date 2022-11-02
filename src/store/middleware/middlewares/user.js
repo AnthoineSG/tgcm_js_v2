@@ -55,7 +55,6 @@ const userMiddleware = (store) => (next) => (action) => {
       };
       axios(config)
         .then((res) => {
-          console.log(res.data);
           store.dispatch(submitLoginSuccess(res.data));
         })
         .catch((error) => {
@@ -113,8 +112,7 @@ const userMiddleware = (store) => (next) => (action) => {
     }
 
     case LOGOUT: {
-      localStorage.removeItem('email');
-      localStorage.removeItem('password');
+      localStorage.removeItem('userInfos');
 
       const config = {
         method: 'POST',

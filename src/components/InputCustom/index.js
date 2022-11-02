@@ -32,7 +32,7 @@ function InputCustom({
 }
 
 InputCustom.defaultProps = {
-  id: '',
+  id: null,
   required: null,
 };
 

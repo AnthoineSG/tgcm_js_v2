@@ -44,10 +44,21 @@ function App() {
     dispatch(getCategories());
     dispatch(getBrand());
 
-    const localEmail = localStorage.getItem('email');
-    const localPassword = localStorage.getItem('password');
-    if (localEmail && localPassword) {
-      dispatch(loginWithLocalstorage(localEmail, localPassword));
+    if (localStorage.getItem('userInfos')) {
+      const { localEmail, localPassword, timestamp } = JSON.parse(
+        localStorage.getItem('userInfos')
+      );
+      const dateNow = new Date().getTime();
+      // ! retourne un INT en minute (1.000345 === +1 min || 60.9376 === +1 h)
+      // ! dateNow = maintenant
+      // ! timestamp = date de la session
+      // ! (dateNow - timestamp) = 14709 (14sec709)
+      // ! (dateNow - timestamp) / 1000 = 11.011 (11sec011)
+      // ! (dateNow - timestamp) / 1000 / 60 = 0.2840 (0min28sec)
+      const dateDif = (dateNow - timestamp) / 1000 / 60;
+      if (dateDif < 1440) {
+        dispatch(loginWithLocalstorage(localEmail, localPassword));
+      }
     }
   }, []);
 
