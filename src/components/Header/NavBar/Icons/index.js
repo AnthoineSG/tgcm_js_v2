@@ -23,7 +23,11 @@ function Icons() {
   return (
     <div className="icons">
       <img className="icons-items" src={searchIcon} alt="icone de recherche" />
-      <button type="button" onClick={handleNewsLetterClick}>
+      <button
+        className="icons-button"
+        type="button"
+        onClick={handleNewsLetterClick}
+      >
         <img
           className="icons-items"
           src={newletterIcon}

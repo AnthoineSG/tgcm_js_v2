@@ -10,8 +10,8 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 0 20px 5px #000000;
-  background-color: hsla(0, 0%, 0%, 0.400);
+  box-shadow: inset 0 0 10px 5px #000000;
+  background-color: hsla(0, 0%, 0%, 0.100);
 
   &__container {
     position: relative;
@@ -28,6 +28,9 @@
       position: absolute;
       top: 5%;
       right: 10%;
+      border: none;
+      background-color: white;
+      font-size: 1rem;
     }
 
     &-title {
@@ -35,12 +38,22 @@
     }
 
     &__form {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
 
       &-input {
-
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        border: 1px solid vars.$beaute;
       }
       &-button {
-
+        border: none;
+        background-color: vars.$services;
+        padding: 0.5rem 0.8rem;
+        font-size: 1.2rem;
+        font-family: vars.$bold;
       }
     }
   }
