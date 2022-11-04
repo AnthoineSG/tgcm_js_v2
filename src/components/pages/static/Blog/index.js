@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 function Blog() {
   return (
     <main>
@@ -6,4 +8,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default memo(Blog);

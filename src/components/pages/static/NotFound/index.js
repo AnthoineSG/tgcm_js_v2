@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import errorGif from 'src/assets/images/Session-Jump-Scare.gif';
 
 import './notfound.scss';
@@ -11,4 +13,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default memo(NotFound);

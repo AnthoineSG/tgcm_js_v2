@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import superDevData from 'src/data/superDevData';
 
 import './superdev.scss';
@@ -26,4 +28,4 @@ function Superdev() {
   );
 }
 
-export default Superdev;
+export default memo(Superdev);

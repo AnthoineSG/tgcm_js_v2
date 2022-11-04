@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 function Contact() {
   return (
     <main>
@@ -6,4 +8,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default memo(Contact);

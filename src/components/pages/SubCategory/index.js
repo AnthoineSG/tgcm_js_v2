@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 
@@ -45,4 +46,4 @@ function SubCategory() {
   );
 }
 
-export default SubCategory;
+export default memo(SubCategory);

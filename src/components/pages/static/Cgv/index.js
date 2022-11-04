@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import cgvData from 'src/data/cgvData';
 
 import './cgv.scss';
@@ -18,4 +20,4 @@ function Cgv() {
   );
 }
 
-export default Cgv;
+export default memo(Cgv);

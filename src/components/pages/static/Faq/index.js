@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 import faqData from 'src/data/faqData';
 
 import './faq.scss';
@@ -29,4 +31,4 @@ function Faq() {
   );
 }
 
-export default Faq;
+export default memo(Faq);
