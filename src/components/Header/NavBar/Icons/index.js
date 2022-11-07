@@ -7,6 +7,7 @@ import basketIcon from 'src/assets/logo/shopping-cart.svg';
 import searchIcon from 'src/assets/logo/search.svg';
 
 import NewsLetter from 'src/components/NewsLetter';
+import Search from 'src/components/Search';
 
 import './icons.scss';
 
@@ -15,34 +16,56 @@ function Icons() {
   const activeNewsLetter = useSelector(
     (state) => state.newsLetter.activeNewsLetter
   );
+  const activeSearch = useSelector((state) => state.search.activeSearch);
+
+  const handleSearchClick = () => {
+    dispatch({ type: 'TOGGLE_SEARCH' });
+  };
 
   const handleNewsLetterClick = () => {
     dispatch({ type: 'ACTIVE_NEWSLETTER' });
   };
 
   return (
-    <div className="icons">
-      <img className="icons-items" src={searchIcon} alt="icone de recherche" />
-      <button
-        className="icons-button"
-        type="button"
-        onClick={handleNewsLetterClick}
-      >
-        <img
-          className="icons-items"
-          src={newletterIcon}
-          alt="icone de newletter"
-        />
-      </button>
-      <Link to="/account">
-        <img className="icons-items" src={profilIcon} alt="icon de profil" />
-      </Link>
-      <Link to="/basket">
-        <img className="icons-items" src={basketIcon} alt="icon de panier" />
-      </Link>
+    <>
+      <div className="icons">
+        <button
+          className="icons-button"
+          type="button"
+          onClick={handleSearchClick}
+        >
+          <img
+            className="icons-items"
+            src={searchIcon}
+            alt="icone de recherche"
+          />
+        </button>
 
-      {activeNewsLetter && <NewsLetter />}
-    </div>
+        <button
+          className="icons-button"
+          type="button"
+          onClick={handleNewsLetterClick}
+        >
+          <img
+            className="icons-items"
+            src={newletterIcon}
+            alt="icone de newletter"
+          />
+        </button>
+
+        {activeNewsLetter && <NewsLetter />}
+
+        <Link to="/account">
+          <img className="icons-items" src={profilIcon} alt="icon de profil" />
+        </Link>
+
+        <Link to="/basket">
+          <img className="icons-items" src={basketIcon} alt="icon de panier" />
+        </Link>
+      </div>
+
+      {activeSearch && <Search />}
+    </>
   );
 }
 

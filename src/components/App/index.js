@@ -14,7 +14,6 @@ import Header from 'src/components/Header';
 import Footer from 'src/components/Footer';
 // ? DYNAMIQUE
 import HomePage from 'src/components/pages/HomePage';
-import NotFound from 'src/components/pages/static/NotFound';
 import SubCategory from 'src/components/pages/SubCategory';
 import Product from 'src/components/pages/Product';
 import Profil from 'src/components/pages/Account/Profil';
@@ -28,6 +27,7 @@ import Faq from 'src/components/pages/static/Faq';
 import Blog from 'src/components/pages/static/Blog';
 import Contact from 'src/components/pages/static/Contact';
 import Superdev from 'src/components/pages/static/Superdev';
+import NotFound from 'src/components/pages/static/NotFound';
 
 import './app.scss';
 
@@ -65,6 +65,7 @@ function App() {
   return (
     <div className="app">
       <Header />
+
       <Routes>
         {/* DYNAMIQUE */}
         <Route path="/" element={<HomePage />} />
@@ -84,6 +85,7 @@ function App() {
         <Route path="/superdev" element={<Superdev />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+
       <Footer />
     </div>
   );
