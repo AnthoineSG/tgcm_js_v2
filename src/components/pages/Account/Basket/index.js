@@ -71,7 +71,9 @@ function Basket() {
           />
         </div>
       ) : (
-        <div>ya pas de panier</div>
+        <div className="basket__empty">
+          <h2 className="basket__empty-title">Votre panier est vide</h2>
+        </div>
       )}
     </main>
   );

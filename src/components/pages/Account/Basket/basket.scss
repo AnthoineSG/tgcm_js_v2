@@ -46,4 +46,14 @@
       }
     }
   }
+
+  &__empty {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    &-title {
+      font-family: vars.$bold;
+      font-size: 1.8rem;
+    }
+  }
 }
