@@ -1,6 +1,7 @@
 const initialState = {
   activeSearch: false,
   inputValueSearch: '',
+  inputIdSearch: 0,
   optionsSearch: [],
 };
 
@@ -16,6 +17,18 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         inputValueSearch: action.newInputValue,
+        inputIdSearch: action.newInputId,
+      };
+
+    case 'GET_SUBCATEGORY':
+      return {
+        ...state,
+      };
+
+    case 'GET_SUBCATEGORY_SUCCESS':
+      return {
+        ...state,
+        optionsSearch: action.optionsSearch,
       };
 
     default:
