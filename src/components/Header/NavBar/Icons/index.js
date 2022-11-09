@@ -12,6 +12,7 @@ import Search from 'src/components/Search';
 import { activeNewsletter, toggleSearch } from 'src/store/actions';
 
 import './icons.scss';
+import { useEffect } from 'react';
 
 function Icons() {
   const dispatch = useDispatch();
@@ -30,6 +31,12 @@ function Icons() {
     }
     return 0;
   };
+
+  useEffect(() => {
+    countProductInBasket();
+  }, [basket]);
+
+  const count = countProductInBasket();
 
   const handleSearchClick = () => {
     dispatch(toggleSearch());
@@ -72,11 +79,7 @@ function Icons() {
           <img className="icons-items" src={profilIcon} alt="icon de profil" />
         </Link>
 
-        <Link
-          to="/basket"
-          current-count={countProductInBasket()}
-          className="icons-items-link"
-        >
+        <Link to="/basket" current-count={count} className="icons-items-link">
           <img
             className="icons-items icons-items-pick"
             src={basketIcon}

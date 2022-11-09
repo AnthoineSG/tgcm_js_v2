@@ -6,6 +6,7 @@ import {
   ADD_PRODUCT_BASKET,
   getProductSuccess,
   GET_PRODUCT,
+  getBasket,
 } from 'src/store/actions';
 
 const productMiddleware = (store) => (next) => (action) => {
@@ -26,8 +27,9 @@ const productMiddleware = (store) => (next) => (action) => {
       const token = store.getState().users.user.tokenJwt;
       const userEmail = store.getState().users.user.email;
       axios(urlAddProductBasket(action.productId, token, userEmail))
-        .then((res) => {
-          console.log(res.data);
+        // eslint-disable-next-line no-unused-vars
+        .then((_) => {
+          store.dispatch(getBasket());
         })
         .catch((error) => {
           console.log(error);
