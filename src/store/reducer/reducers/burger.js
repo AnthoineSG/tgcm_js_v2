@@ -1,7 +1,7 @@
 import {
-  CHANGE_PATH_CLOSE_BURGER,
-  CLOSE_BURGER,
   OPEN_BURGER,
+  CLOSE_BURGER,
+  CHANGE_PATH_CLOSE_BURGER,
 } from 'src/store/actions';
 
 const initialState = {

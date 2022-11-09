@@ -1,7 +1,7 @@
 import {
   ACTIVE_NEWSLETTER,
-  CHANGE_INPUT_NEWSLETTER,
   UNACTIVE_NEWSLETTER,
+  CHANGE_INPUT_NEWSLETTER,
 } from 'src/store/actions';
 
 const initalState = {

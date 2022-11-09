@@ -1,7 +1,8 @@
 import {
-  CHANGE_PATH_CLOSE_BURGER,
-  CHOOSE_CATEGORIE,
+  GET_CATEGORIES,
   GET_CATEGORIES_SUCCESS,
+  CHOOSE_CATEGORIE,
+  CHANGE_PATH_CLOSE_BURGER,
 } from 'src/store/actions';
 
 const initalState = {
@@ -11,6 +12,11 @@ const initalState = {
 
 const reducer = (state = initalState, action = {}) => {
   switch (action.type) {
+    case GET_CATEGORIES:
+      return {
+        ...state,
+      };
+
     case GET_CATEGORIES_SUCCESS:
       return {
         ...state,

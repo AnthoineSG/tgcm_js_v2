@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import {
-  urlGetBasket,
   urlLoginWithLocalstorage,
   urlLogout,
   urlSubmitLogin,
@@ -9,8 +8,6 @@ import {
 } from 'src/data/urlToRequest';
 
 import {
-  getBasketSuccess,
-  GET_BASKET,
   loginWithLocalstorageSuccess,
   LOGIN_WITH_LOCALSTORAGE,
   LOGOUT,
@@ -19,6 +16,7 @@ import {
   submitNewUserSuccess,
   SUBMIT_LOGIN,
   SUBMIT_NEW_USER,
+  getBasket,
 } from 'src/store/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
@@ -47,6 +45,7 @@ const userMiddleware = (store) => (next) => (action) => {
       axios(urlSubmitLogin(action.email, action.password))
         .then((res) => {
           store.dispatch(submitLoginSuccess(res.data));
+          store.dispatch(getBasket());
         })
         .catch((error) => {
           console.log(error);
@@ -59,20 +58,7 @@ const userMiddleware = (store) => (next) => (action) => {
       axios(urlLoginWithLocalstorage(action.email, action.password))
         .then((res) => {
           store.dispatch(loginWithLocalstorageSuccess(res.data));
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      next(action);
-      break;
-    }
-
-    case GET_BASKET: {
-      const userEmail = store.getState().users.user.email;
-      const token = store.getState().users.user.tokenJwt;
-      axios(urlGetBasket(userEmail, token))
-        .then((res) => {
-          store.dispatch(getBasketSuccess(res.data));
+          store.dispatch(getBasket());
         })
         .catch((error) => {
           console.log(error);

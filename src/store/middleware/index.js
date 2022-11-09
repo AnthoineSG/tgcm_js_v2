@@ -5,6 +5,7 @@ import categoriesMiddleware from './middlewares/categories';
 import productMiddleware from './middlewares/product';
 import userMiddleware from './middlewares/user';
 import searchMiddleware from './middlewares/search';
+import basketMiddleware from './middlewares/basket';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -12,9 +13,10 @@ const enhancers = composeEnhancers(
   applyMiddleware(
     brandMiddleware,
     categoriesMiddleware,
-    userMiddleware,
+    searchMiddleware,
     productMiddleware,
-    searchMiddleware
+    userMiddleware,
+    basketMiddleware
   )
 );
 
