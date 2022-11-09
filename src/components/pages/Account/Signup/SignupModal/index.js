@@ -1,6 +1,7 @@
 import { createNewAccountSuccess } from 'src/store/actions';
 
 import LinkCuston from 'src/components/LinkCustom';
+
 import { modalSignupData } from 'src/data/modalData';
 
 function SignupModal() {

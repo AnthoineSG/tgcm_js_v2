@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 
 import homeLogo from 'src/assets/images/Logo V4 détouré fond couleur nude.png';
+
 import homepageData from 'src/data/homepageData';
 
 import './homepage.scss';

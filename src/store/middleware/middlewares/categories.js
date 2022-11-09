@@ -10,7 +10,7 @@ import {
   getCategoriesSuccess,
   getProductSubCategoriesSuccess,
   GET_PRODUCT_SUB_CATEGORIES,
-} from '../../actions';
+} from 'src/store/actions';
 
 const categoriesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

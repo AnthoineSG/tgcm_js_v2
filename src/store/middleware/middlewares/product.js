@@ -6,7 +6,7 @@ import {
   ADD_PRODUCT_BASKET,
   getProductSuccess,
   GET_PRODUCT,
-} from '../../actions';
+} from 'src/store/actions';
 
 const productMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

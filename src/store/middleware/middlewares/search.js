@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { urlGetSubCategory } from 'src/data/urlToRequest';
 
-import { getSubcategorySuccess, GET_SUBCATEGORY } from '../../actions';
+import { getSubcategorySuccess, GET_SUBCATEGORY } from 'src/store/actions';
 
 const searchMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

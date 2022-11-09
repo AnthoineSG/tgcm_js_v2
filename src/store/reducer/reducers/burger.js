@@ -2,7 +2,7 @@ import {
   CHANGE_PATH_CLOSE_BURGER,
   CLOSE_BURGER,
   OPEN_BURGER,
-} from '../../actions';
+} from 'src/store/actions';
 
 const initialState = {
   burgerIsActive: false,

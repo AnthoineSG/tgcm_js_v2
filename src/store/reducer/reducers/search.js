@@ -3,7 +3,7 @@ import {
   GET_SUBCATEGORY,
   GET_SUBCATEGORY_SUCCESS,
   TOGGLE_SEARCH,
-} from '../../actions';
+} from 'src/store/actions';
 
 const initialState = {
   activeSearch: false,

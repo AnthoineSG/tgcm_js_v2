@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 
 import { changeInputSignupValue, submitNewUser } from 'src/store/actions';
+
 import InputCustom from 'src/components/InputCustom';
 import ButtonCustom from 'src/components/ButtonCustom';
+
 import SignupModal from './SignupModal';
 
 import './signup.scss';

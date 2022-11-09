@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { urlGetBrand } from 'src/data/urlToRequest';
 
-import { GET_BRAND, getBrandSuccess } from '../../actions';
+import { GET_BRAND, getBrandSuccess } from 'src/store/actions';
 
 const brandMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

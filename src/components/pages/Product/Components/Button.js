@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { addProductBasket } from 'src/store/actions';
+
 import ButtonCustom from 'src/components/ButtonCustom';
 
 function Button({ prodCat }) {

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import Select from 'react-select';
 
-import { changeInputSearch } from '../../store/actions';
+import { changeInputSearch } from 'src/store/actions';
 
 import './search.scss';
 

@@ -12,7 +12,7 @@ import {
   SUBMIT_LOGIN_SUCCESS,
   SUBMIT_NEW_USER,
   SUBMIT_NEW_USER_SUCCESS,
-} from '../../actions';
+} from 'src/store/actions';
 
 const initialState = {
   isLogged: false,

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { profilInfosData } from 'src/data/profilData';
+
 import { logout } from 'src/store/actions';
 
 import ButtonCustom from 'src/components/ButtonCustom';

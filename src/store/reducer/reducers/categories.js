@@ -2,7 +2,7 @@ import {
   CHANGE_PATH_CLOSE_BURGER,
   CHOOSE_CATEGORIE,
   GET_CATEGORIES_SUCCESS,
-} from '../../actions';
+} from 'src/store/actions';
 
 const initalState = {
   categoriesList: [],

@@ -19,7 +19,7 @@ import {
   submitNewUserSuccess,
   SUBMIT_LOGIN,
   SUBMIT_NEW_USER,
-} from '../../actions';
+} from 'src/store/actions';
 
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {

@@ -2,7 +2,7 @@ import {
   ACTIVE_NEWSLETTER,
   CHANGE_INPUT_NEWSLETTER,
   UNACTIVE_NEWSLETTER,
-} from '../../actions';
+} from 'src/store/actions';
 
 const initalState = {
   activeNewsLetter: false,
