@@ -1,15 +1,13 @@
 import axios from 'axios';
 
+import { urlGetSubCategory } from 'src/data/urlToRequest';
+
 import { getSubcategorySuccess, GET_SUBCATEGORY } from '../../actions';
 
 const searchMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_SUBCATEGORY: {
-      const config = {
-        method: 'GET',
-        url: `http://localhost:8080/api/sub_category`,
-      };
-      axios(config)
+      axios(urlGetSubCategory())
         .then((res) => {
           const refactOptions = res.data.map((option) => {
             option.value = option.name;

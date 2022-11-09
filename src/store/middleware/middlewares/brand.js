@@ -1,17 +1,19 @@
 import axios from 'axios';
 
+import { urlGetBrand } from 'src/data/urlToRequest';
+
 import { GET_BRAND, getBrandSuccess } from '../../actions';
 
 const brandMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_BRAND: {
-      const config = {
-        method: 'GET',
-        url: 'http://localhost:8080/api/brand',
-      };
-      axios(config).then((res) => {
-        store.dispatch(getBrandSuccess(res.data));
-      });
+      axios(urlGetBrand())
+        .then((res) => {
+          store.dispatch(getBrandSuccess(res.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       next(action);
       break;
     }

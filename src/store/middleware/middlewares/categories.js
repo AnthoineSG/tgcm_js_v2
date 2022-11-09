@@ -1,6 +1,11 @@
 import axios from 'axios';
 
 import {
+  urlGetCategory,
+  urlGetProductSubCategory,
+} from 'src/data/urlToRequest';
+
+import {
   GET_CATEGORIES,
   getCategoriesSuccess,
   getProductSubCategoriesSuccess,
@@ -10,11 +15,7 @@ import {
 const categoriesMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_CATEGORIES: {
-      const config = {
-        method: 'GET',
-        url: 'http://localhost:8080/api/category/sub_category',
-      };
-      axios(config)
+      axios(urlGetCategory())
         .then((res) => {
           store.dispatch(getCategoriesSuccess(res.data));
         })
@@ -26,11 +27,7 @@ const categoriesMiddleware = (store) => (next) => (action) => {
     }
 
     case GET_PRODUCT_SUB_CATEGORIES: {
-      const config = {
-        method: 'GET',
-        url: `http://localhost:8080/api/product/sub_category/${action.subCategory}`,
-      };
-      axios(config)
+      axios(urlGetProductSubCategory(action.subCategory))
         .then((res) => {
           store.dispatch(getProductSubCategoriesSuccess(res.data.product));
         })

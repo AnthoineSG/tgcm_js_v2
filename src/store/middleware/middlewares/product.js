@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { urlGetProduct, urlAddProductBasket } from 'src/data/urlToRequest';
+
 import {
   ADD_PRODUCT_BASKET,
   getProductSuccess,
@@ -9,11 +11,7 @@ import {
 const productMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_PRODUCT: {
-      const config = {
-        method: 'GET',
-        url: `http://localhost:8080/api/product/${action.idProduct}`,
-      };
-      axios(config)
+      axios(urlGetProduct(action.idProduct))
         .then((res) => {
           store.dispatch(getProductSuccess(res.data));
         })
@@ -27,19 +25,7 @@ const productMiddleware = (store) => (next) => (action) => {
     case ADD_PRODUCT_BASKET: {
       const token = store.getState().users.user.tokenJwt;
       const userEmail = store.getState().users.user.email;
-      const config = {
-        method: 'POST',
-        url: `http://localhost:8080/api/product/${action.productId}/user`,
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        data: {
-          email: userEmail,
-        },
-        withCredentials: true,
-      };
-      axios(config)
+      axios(urlAddProductBasket(action.productId, token, userEmail))
         .then((res) => {
           console.log(res.data);
         })

@@ -1,6 +1,14 @@
 import axios from 'axios';
 
 import {
+  urlGetBasket,
+  urlLoginWithLocalstorage,
+  urlLogout,
+  urlSubmitLogin,
+  urlSubmitNewUser,
+} from 'src/data/urlToRequest';
+
+import {
   getBasketSuccess,
   GET_BASKET,
   loginWithLocalstorageSuccess,
@@ -16,20 +24,14 @@ import {
 const userMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
     case SUBMIT_NEW_USER: {
-      const config = {
-        method: 'POST',
-        url: 'http://localhost:8080/api/user',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: {
-          firstname: action.firstname,
-          lastname: action.lastname,
-          email: action.email,
-          password: action.password,
-        },
-      };
-      axios(config)
+      axios(
+        urlSubmitNewUser(
+          action.firstname,
+          action.lastname,
+          action.email,
+          action.password
+        )
+      )
         // eslint-disable-next-line no-unused-vars
         .then((_) => {
           store.dispatch(submitNewUserSuccess());
@@ -42,18 +44,7 @@ const userMiddleware = (store) => (next) => (action) => {
     }
 
     case SUBMIT_LOGIN: {
-      const config = {
-        method: 'POST',
-        url: 'http://localhost:8080/api/user/login',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: {
-          email: action.email,
-          password: action.password,
-        },
-      };
-      axios(config)
+      axios(urlSubmitLogin(action.email, action.password))
         .then((res) => {
           store.dispatch(submitLoginSuccess(res.data));
         })
@@ -65,18 +56,7 @@ const userMiddleware = (store) => (next) => (action) => {
     }
 
     case LOGIN_WITH_LOCALSTORAGE: {
-      const config = {
-        method: 'POST',
-        url: 'http://localhost:8080/api/user/login',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        data: {
-          email: action.email,
-          password: action.password,
-        },
-      };
-      axios(config)
+      axios(urlLoginWithLocalstorage(action.email, action.password))
         .then((res) => {
           store.dispatch(loginWithLocalstorageSuccess(res.data));
         })
@@ -90,17 +70,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case GET_BASKET: {
       const userEmail = store.getState().users.user.email;
       const token = store.getState().users.user.tokenJwt;
-
-      const config = {
-        method: 'GET',
-        url: `http://localhost:8080/api/user/${userEmail}/product`,
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        withCredentials: true,
-      };
-      axios(config)
+      axios(urlGetBasket(userEmail, token))
         .then((res) => {
           store.dispatch(getBasketSuccess(res.data));
         })
@@ -114,11 +84,7 @@ const userMiddleware = (store) => (next) => (action) => {
     case LOGOUT: {
       localStorage.removeItem('userInfos');
 
-      const config = {
-        method: 'POST',
-        url: 'http://localhost:8080/api/user/logout',
-      };
-      axios(config)
+      axios(urlLogout())
         // eslint-disable-next-line no-unused-vars
         .then((_) => {
           store.dispatch(logoutSuccess());
