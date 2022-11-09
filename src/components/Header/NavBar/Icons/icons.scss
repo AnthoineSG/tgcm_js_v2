@@ -6,6 +6,21 @@
 
   &-items {
     height: 2.5rem;
+    
+    &-link {
+      position: relative;
+    }
+    &-link::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      text-align: center;
+      padding: 0.2rem;
+      border-radius: 50%;
+      content: attr(current-count);
+      background-color: red;
+      color: white;
+    }
   }
 
   &-button {

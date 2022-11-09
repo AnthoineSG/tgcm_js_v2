@@ -61,8 +61,12 @@ function Icons() {
           <img className="icons-items" src={profilIcon} alt="icon de profil" />
         </Link>
 
-        <Link to="/basket">
-          <img className="icons-items" src={basketIcon} alt="icon de panier" />
+        <Link to="/basket" current-count={0} className="icons-items-link">
+          <img
+            className="icons-items icons-items-pick"
+            src={basketIcon}
+            alt="icon de panier"
+          />
         </Link>
       </div>
 
