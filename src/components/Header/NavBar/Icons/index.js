@@ -19,6 +19,17 @@ function Icons() {
     (state) => state.newsLetter.activeNewsLetter
   );
   const activeSearch = useSelector((state) => state.search.activeSearch);
+  const basket = useSelector((state) => state.users.basket);
+
+  const countProductInBasket = () => {
+    if (!basket.product) {
+      return 0;
+    }
+    if (basket.product.length > 1) {
+      return basket.product.length;
+    }
+    return 0;
+  };
 
   const handleSearchClick = () => {
     dispatch(toggleSearch());
@@ -61,7 +72,11 @@ function Icons() {
           <img className="icons-items" src={profilIcon} alt="icon de profil" />
         </Link>
 
-        <Link to="/basket" current-count={0} className="icons-items-link">
+        <Link
+          to="/basket"
+          current-count={countProductInBasket()}
+          className="icons-items-link"
+        >
           <img
             className="icons-items icons-items-pick"
             src={basketIcon}
