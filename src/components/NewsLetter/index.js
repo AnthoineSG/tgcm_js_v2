@@ -1,22 +1,30 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { unactiveNewsletter, changeInputNewsletter } from 'src/store/actions';
+
+import InputCustom from 'src/components/InputCustom';
 
 import './newsletter.scss';
 
 function NewsLetter() {
   const dispatch = useDispatch();
+  const inputValueNewsletter = useSelector(
+    (state) => state.newsLetter.inputValueNewsletter
+  );
 
   const handleSubmitNewsLetter = (e) => {
     e.preventDefault();
   };
 
   const handleCloseModal = () => {
-    dispatch({ type: 'UNACTIVE_NEWSLETTER' });
+    dispatch(unactiveNewsletter());
   };
 
   return (
-    <main className="newsletter">
+    <div className="newsletter">
       <div className="newsletter__container">
         <h1 className="newsletter__container-title">NewsLetter</h1>
+
         <button
           className="newsletter__container-close"
           type="button"
@@ -24,20 +32,26 @@ function NewsLetter() {
         >
           X
         </button>
+
         <form
           className="newsletter__container__form"
           onSubmit={handleSubmitNewsLetter}
         >
-          <input
+          <InputCustom
             className="newsletter__container__form-input"
+            name="email"
             placeholder="Votre email"
+            type="email"
+            value={inputValueNewsletter}
+            action={changeInputNewsletter}
           />
+
           <button className="newsletter__container__form-button" type="submit">
             Valider
           </button>
         </form>
       </div>
-    </main>
+    </div>
   );
 }
 

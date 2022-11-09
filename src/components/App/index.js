@@ -7,6 +7,7 @@ import {
   getCategories,
   getBrand,
   loginWithLocalstorage,
+  getSubcategory,
 } from 'src/store/actions';
 
 // ? COMPONENTS
@@ -43,6 +44,7 @@ function App() {
   useEffect(() => {
     dispatch(getCategories());
     dispatch(getBrand());
+    dispatch(getSubcategory());
 
     if (localStorage.getItem('userInfos')) {
       const { localEmail, localPassword, timestamp } = JSON.parse(

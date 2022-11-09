@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+import { getSubcategorySuccess, GET_SUBCATEGORY } from '../../actions';
+
 const searchMiddleware = (store) => (next) => (action) => {
   switch (action.type) {
-    case 'GET_SUBCATEGORY': {
+    case GET_SUBCATEGORY: {
       const config = {
         method: 'GET',
         url: `http://localhost:8080/api/sub_category`,
@@ -16,10 +18,7 @@ const searchMiddleware = (store) => (next) => (action) => {
             delete option.category_id;
             return option;
           });
-          store.dispatch({
-            type: 'GET_SUBCATEGORY_SUCCESS',
-            optionsSearch: refactOptions,
-          });
+          store.dispatch(getSubcategorySuccess(refactOptions));
         })
         .catch((error) => {
           console.log(error);

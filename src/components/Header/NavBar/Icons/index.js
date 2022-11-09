@@ -9,6 +9,8 @@ import searchIcon from 'src/assets/logo/search.svg';
 import NewsLetter from 'src/components/NewsLetter';
 import Search from 'src/components/Search';
 
+import { activeNewsletter, toggleSearch } from 'src/store/actions';
+
 import './icons.scss';
 
 function Icons() {
@@ -19,11 +21,11 @@ function Icons() {
   const activeSearch = useSelector((state) => state.search.activeSearch);
 
   const handleSearchClick = () => {
-    dispatch({ type: 'TOGGLE_SEARCH' });
+    dispatch(toggleSearch());
   };
 
   const handleNewsLetterClick = () => {
-    dispatch({ type: 'ACTIVE_NEWSLETTER' });
+    dispatch(activeNewsletter());
   };
 
   return (
