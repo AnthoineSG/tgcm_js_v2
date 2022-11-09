@@ -8,9 +8,7 @@ import './newsletter.scss';
 
 function NewsLetter() {
   const dispatch = useDispatch();
-  const inputValueNewsletter = useSelector(
-    (state) => state.newsLetter.inputValueNewsletter
-  );
+  const email = useSelector((state) => state.newsLetter.email);
 
   const handleSubmitNewsLetter = (e) => {
     e.preventDefault();
@@ -42,7 +40,7 @@ function NewsLetter() {
             name="email"
             placeholder="Votre email"
             type="email"
-            value={inputValueNewsletter}
+            value={email}
             action={changeInputNewsletter}
           />
 
