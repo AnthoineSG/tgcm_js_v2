@@ -1,0 +1,31 @@
+@use 'src/styles/vars';
+
+.search__form {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  position: relative;
+
+  &::before {
+    content: '>';
+    position: absolute;
+    top: -16px;
+    left: 6%;
+    rotate: 270deg;
+    font-size: 1.4rem;
+    color: vars.$beaute;
+    font-family: vars.$bold;
+  }
+
+  &-select {
+    width: 69%;
+  }
+  &-button {
+    width: 30%;
+    color: vars.$beaute;
+    font-family: vars.$bold;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid vars.$beaute;
+  }
+}
