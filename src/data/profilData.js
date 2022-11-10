@@ -1,4 +1,4 @@
-export const profilInfosData = [
+export default [
   {
     id: 1,
     title: 'Prenom : ',
@@ -50,5 +50,3 @@ export const profilInfosData = [
     dataToShearch: 'created_at',
   },
 ];
-
-export const infosData = [];

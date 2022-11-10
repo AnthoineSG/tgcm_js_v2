@@ -1,4 +1,4 @@
-export const footerLinkData = [
+export default [
   {
     id: 1,
     to: '/cgv',
@@ -25,5 +25,3 @@ export const footerLinkData = [
     text: 'Super Dev',
   },
 ];
-
-export const LinkData = [];

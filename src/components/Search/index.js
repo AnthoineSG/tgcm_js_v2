@@ -1,37 +1,26 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Select from 'react-select';
 
 import { changeInputSearch } from 'src/store/actions';
 
+import { colourStyles } from './styles';
 import './search.scss';
 
-const colourStyles = {
-  control: (styles) => ({
-    ...styles,
-    backgroundColor: 'white',
-    border: '2px solid #65938B',
-  }),
-  // eslint-disable-next-line no-unused-vars
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => ({
-    ...styles,
-    color: '#65938B',
-    cursor: isDisabled ? 'not-allowed' : 'default',
-  }),
-};
-
 function Search() {
-  const inputValueSearch = useSelector(
-    (state) => state.search.inputValueSearch
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { inputValueSearch, optionsSearch } = useSelector(
+    (state) => state.search
   );
-  const optionsSearch = useSelector((state) => state.search.optionsSearch);
 
   const handleSubmitSearch = (e) => {
     e.preventDefault();
-    console.log('submit', inputValueSearch);
+    navigate(`/category/${inputValueSearch}`);
   };
 
-  const handleInputChange = (input) => {
-    changeInputSearch(input.value, input.id);
+  const handleInputChange = (e) => {
+    dispatch(changeInputSearch(e.value, e.id));
   };
 
   return (

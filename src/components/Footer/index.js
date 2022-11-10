@@ -4,7 +4,7 @@ import facebookIcon from 'src/assets/logo/facebook.svg';
 import twitterIcon from 'src/assets/logo/twitter.svg';
 import instagramIcon from 'src/assets/logo/instagram.svg';
 
-import { footerLinkData } from 'src/data/linkData';
+import footerLinkData from 'src/data/linkData';
 
 import './footer.scss';
 
