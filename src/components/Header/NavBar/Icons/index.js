@@ -26,7 +26,7 @@ function Icons() {
     if (!basket.product) {
       return 0;
     }
-    if (basket.product.length > 1) {
+    if (basket.product.length >= 1) {
       return basket.product.length;
     }
     return 0;

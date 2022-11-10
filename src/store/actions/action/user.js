@@ -14,6 +14,7 @@ export const LOGOUT = 'LOGOUT';
 export const GET_BASKET = 'GET_BASKET';
 export const GET_BASKET_SUCCESS = 'GET_BASKET_SUCCESS';
 export const CHANGE_INPUT_ORDER_VALUE = 'CHANGE_INPUT_ORDER_VALUE';
+export const DELETE_PRODUCT_IN_BASKET = 'DELETE_PRODUCT_IN_BASKET';
 
 /**
  * Action creator - change input in page Sign up
@@ -125,4 +126,9 @@ export const changeInputOrderValue = (inputName, inputValue) => ({
   type: CHANGE_INPUT_ORDER_VALUE,
   inputName,
   inputValue,
+});
+
+export const deleteProductInBasket = (data) => ({
+  type: DELETE_PRODUCT_IN_BASKET,
+  data,
 });

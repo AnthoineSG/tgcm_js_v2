@@ -88,3 +88,17 @@ export const urlLogout = () => ({
   method: 'POST',
   url: 'http://localhost:8080/api/user/logout',
 });
+
+export const urlDeleteProductInBasket = (token, productId, userId) => ({
+  method: 'DELETE',
+  url: 'http://localhost:8080/api/product/user',
+  headers: {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${token}`,
+  },
+  data: {
+    product_id: productId,
+    user_id: userId,
+  },
+  withCredentials: true,
+});
